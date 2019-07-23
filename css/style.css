@@ -9,6 +9,7 @@ body{
 }
 
 .experience{
+  border-radius: '5px';
   display: block;
   float: left;
   margin-bottom: 2%;
@@ -46,8 +47,11 @@ body{
 
 .description{
   display: none;
+  overflow: hidden;
 }
 
 .publication{
+  background-color: white;
+  border-radius: '5px';
   margin-bottom: 2%;
 }
