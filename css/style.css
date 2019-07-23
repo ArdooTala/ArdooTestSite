@@ -1,0 +1,53 @@
+body{
+  font-size: 12px;
+  }
+
+
+
+.banner{
+  height:auto;
+}
+
+.experience{
+  display: block;
+  float: left;
+  margin-bottom: 2%;
+}
+
+
+.title{
+  float: none;
+  display: block;
+  text-align: center;
+  font-size: 200%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  #border: 1px solid black;
+}
+
+.work{
+  float: right;
+  text-align: right;
+}
+
+.educational{
+  float: left;
+}
+
+.year{
+  float: right;
+  display: inline-block;
+  width: 7%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  min-width: 50px;
+}
+
+.description{
+  display: none;
+}
+
+.publication{
+  margin-bottom: 2%;
+}
