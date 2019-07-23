@@ -55,3 +55,8 @@ body{
   border-radius: '5px';
   margin-bottom: 2%;
 }
+
+.nav-link{
+  color: white;
+  background-color: black;
+}
