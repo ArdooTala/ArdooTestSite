@@ -60,3 +60,41 @@ body{
   color: white;
   background-color: black;
 }
+
+.skill{
+  height: 30px;
+  margin-top: 1%;
+}
+
+.software{
+  background-color: #DDDDDD;
+  float: left;
+}
+
+.icon{
+  display: inline-block;
+}
+
+.subcat{
+  border-top: 1px solid black;
+  margin-bottom: 1%;
+}
+
+.category{
+  margin-top: 1%;
+  border-top: 1px solid black;
+}
+
+.items{
+  display: inline-block;
+}
+
+.catname{
+  float: left;
+  overflow: hidden;
+}
+
+.subcatname{
+  float: left;
+  overflow: hidden;
+}
