@@ -2,7 +2,16 @@ body{
   font-size: 12px;
   }
 
+button{
+  background: transparent;
+  border: none;
+  text-align: inherit;
+  outline-width: 0px;
+}
 
+button:focus {
+  outline-width: 0px;
+}
 
 .banner{
   height:auto;
@@ -78,20 +87,32 @@ body{
 .subcat{
   border-top: 1px solid black;
   margin-bottom: 1%;
+  margin-top: 1%;
 }
 
 .category{
   margin-top: 1%;
-  border-top: 1px solid black;
+  margin-bottom: 1%;
+  # border-top: 1px solid black;
+  overflow: hidden;
 }
 
 .items{
   display: inline-block;
 }
 
+.cats{
+  display: none;
+  overflow: hidden;
+}
+
 .catname{
   float: left;
   overflow: hidden;
+  # position: absolute;
+  /* top: 0;
+  bottom: 0;
+  left: 0; */
 }
 
 .subcatname{
