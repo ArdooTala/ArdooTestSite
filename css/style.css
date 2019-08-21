@@ -78,6 +78,9 @@ button:focus {
 .software{
   background-color: #DDDDDD;
   float: left;
+  overflow: hidden;
+  height: 1em;
+  white-space: nowrap;
 }
 
 .icon{
@@ -93,7 +96,7 @@ button:focus {
 .category{
   margin-top: 1%;
   margin-bottom: 1%;
-  # border-top: 1px solid black;
+  border-top: 1px solid black;
   overflow: hidden;
 }
 
@@ -109,10 +112,6 @@ button:focus {
 .catname{
   float: left;
   overflow: hidden;
-  # position: absolute;
-  /* top: 0;
-  bottom: 0;
-  left: 0; */
 }
 
 .subcatname{

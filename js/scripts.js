@@ -37,12 +37,13 @@ function changeUL(elc){
   }
   else {
     elaborate(elc, getUL(elc));
+    fillSkills(getUL(elc));
   }
 }
 
 function elaborate(el, desc){
-  el.style.border = '1px solid black';
-  el.style.borderRadius = "1em";
+  // el.style.border = '1px solid black';
+  // el.style.borderRadius = "1em";
   desc.style.display='block';
   //desc.style.height = "0px";
   myMove(desc);
@@ -56,13 +57,39 @@ function elaborate(el, desc){
       if (h >= hd) {
         clearInterval(id);
       } else {
-        h += 3;
+        h += 1;
         elem.style.height = h + "px";
       }
     }
   }
 }
 
+function fillSkills(sks){
+  var note = null;
+  var sk = null;
+  var controls = sks.querySelectorAll('div');
+  for (var i = 0; i < controls.length; i++) {
+    if (controls[i].className.includes("software")) {
+      hMove(controls[i], -30 * i);
+    }
+    function hMove(x, min){
+      var max = x.getAttribute('data-val');
+      var w = min;
+      x.style.width = "0";
+      var id = setInterval(frame, 0);
+      function frame() {
+        if (w >= max - 1) {
+          clearInterval(id);
+        } else if (w > 0) {
+          w += .02 * (max - w);
+          x.style.width = Math.max(w, 0) + "%";
+        } else {
+          w+=1;
+        }
+      }
+    }
+  }
+}
 
 function delaborate(el, desc){
   myMove(desc);
@@ -72,7 +99,7 @@ function delaborate(el, desc){
     function frame() {
       if (h <= 0) {
         desc.style.display='none';
-        el.style.border = 'none';
+        // el.style.border = 'none';
         clearInterval(id);
       } else {
         h -= 3;
