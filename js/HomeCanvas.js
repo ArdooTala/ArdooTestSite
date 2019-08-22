@@ -131,7 +131,7 @@ function frame() {
       mouseClosestAgent.updatePos(Math.min(2, mouseClosestAgent.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
     }
     else {
-      agents[i].updatePos(Math.min(2, mouseClosestAgent.distanceTo( agents[i].neighbor.x, agents[i].neighbor.y )/ (canvas.width/20)));
+      agents[i].updatePos(Math.min(2, agents[i].distanceTo(agents[i].neighbor.x, agents[i].neighbor.y)/ (canvas.width/20)));
     }
   }
 
