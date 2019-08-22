@@ -60,9 +60,14 @@ button:focus {
 }
 
 .publication{
-  background-color: white;
+  background-color: transparent;
   border-radius: '5px';
   margin-bottom: 2%;
+}
+
+canvas{
+  height: auto;
+  min-height: 1000;
 }
 
 .nav-link{
