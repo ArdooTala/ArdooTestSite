@@ -110,7 +110,7 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
       win.style.height = "0px";
-      var scalar = Math.max(document.getElementById("canvas").clientWidth, document.getElementById("canvas").clientHeight);
+      var scalar = Math.max(document.getElementById("canvas").clientWidth, height * ratio);
       for (var i=0; i < activeAgents; i++){
         agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
                                  Math.random()*20+canvasTargetHeight/2-10,
@@ -159,7 +159,7 @@ var mouseC;
 var mouseCA;
 
 var agents = [];
-var scalar = Math.max(document.getElementById("canvas").clientWidth, document.getElementById("canvas").clientHeight);
+var scalar = Math.max(document.getElementById("canvas").clientWidth, height * ratio);
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
                            Math.random()*20+canvas.height/2-10,
