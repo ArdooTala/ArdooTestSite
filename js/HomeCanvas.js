@@ -84,8 +84,8 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
   return Math.max(Math.min((val / sRange) * tRange + tMin, tMin), tMax);
 }
 
-var tags = ["LinkedIn", "Instagram", "GitHub", "Facebook", "Projects", "Skills",
- "Contact", "CV", "Publications", "Project1", "Project2", "Project3"];
+var tags = ["LINKEDIN", "INSTAGRAM", "GITHUB", "FACEBOOK", "PROJECTS", "SKILLS",
+ "CONTACT", "CV", "PUBLICATIONS", "PROJECT1", "PROJECT2", "PROJECT3"];
 var sizes = [3, 3, 3, 3, 10, 8, 5, 6, 5, 3, 7, 5]
 var agents = [];
 for (var i=0; i < 12; i++){
@@ -120,13 +120,6 @@ function frame() {
       mouseClosestAgent = agents[i];
     }
   }
-  if (mouseClosestAgent) {
-    mouseClosestAgent.heading = mouseClosestAgent.unitize(mouseClosestAgent.x-mouseX, mouseClosestAgent.y-mouseY);
-    ctx.beginPath();
-    ctx.lineWidth = 1;
-    ctx.arc(mouseClosestAgent.x, mouseClosestAgent.y, 40, 0, 2*Math.PI);
-    ctx.stroke();
-  }
 
   for (var i=0; i < agents.length; i++){
     if (agents[i] == mouseClosestAgent) {
@@ -136,7 +129,6 @@ function frame() {
       var v = remapRange(agents[i].clearance, canvas.width/20, canvas.width/10, 10, 0.2);
       agents[i].updatePos(v);
     }
-    console.log(agents[i].x + ", " + agents[i].y);
   }
 
   // Math.min(2, agents[i].distanceTo(agents[i].neighbor.x, agents[i].neighbor.y) / (canvas.width/20))
@@ -165,6 +157,23 @@ function frame() {
     // ctx.font = "bold " + agents[i].size*5 + "px roboto";
     // ctx.fillText(agents[i].tag, agents[i].x, agents[i].y+10, 1000);
   }
-  console.log(agents.length);
+
+  if (mouseClosestAgent) {
+    mouseClosestAgent.heading = mouseClosestAgent.unitize(mouseClosestAgent.x-mouseX, mouseClosestAgent.y-mouseY);
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.arc(mouseClosestAgent.x, mouseClosestAgent.y, 40, 0, 2*Math.PI);
+    ctx.stroke();
+
+    if (mouseC < 50) {
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.rect(mouseClosestAgent.x, mouseClosestAgent.y-30, 250, 60);
+      ctx.fill();
+      ctx.font = "normal " + 30 + "px roboto";
+      ctx.fillStyle = "white";
+      ctx.fillText(mouseClosestAgent.tag, mouseClosestAgent.x-15, mouseClosestAgent.y+10, 250);
+    }
+  }
   // clearInterval(id);
 }
