@@ -68,6 +68,11 @@ button:focus {
 canvas{
   height: auto;
   min-height: 1000;
+  border-bottom: 1px solid black;
+}
+
+.imgs{
+  display: none;
 }
 
 .nav-link{

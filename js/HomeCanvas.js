@@ -1,5 +1,6 @@
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
+var win = document.getElementById("main");
 
 class LinkNode {
   constructor(x, y, tag, size) {
@@ -30,22 +31,26 @@ class LinkNode {
 
   updateHeading(others){
     // Min distance to edge.
-    var nx = Math.min(this.x+200,
-      canvas.width+200-this.x)*(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-    var ny = Math.min(this.y+200,
-      canvas.height+200-this.y)*(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
+    var nx = Math.min(this.x+canvas.width/20, canvas.width-this.x+canvas.width/20)
+      *(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
+    var ny = Math.min(this.y+canvas.width/20, canvas.height-this.y+canvas.width/20)
+      *(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
     var d = Math.min(Math.abs(nx), Math.abs(ny));
 
     if (Math.abs(nx) > Math.abs(ny)) nx = 0;
     else ny = 0;
 
+    var nDis = canvas.width;
     for (var j=0; j < others.length; j++){
       var nd = this.distanceTo(others[j].x, others[j].y);
-      if (nd < d & nd > 1) {
-        d = nd;
+      if (nd < nDis & nd > 1) {
         this.neighbor = others[j];
-        nx = others[j].x - this.x;;
-        ny = others[j].y - this.y;;
+        nDis = nd;
+        if (nd < d) {
+          d = nd;
+          nx = others[j].x - this.x;;
+          ny = others[j].y - this.y;;
+        }
       }
     }
     this.clearance = d;
@@ -59,13 +64,23 @@ class LinkNode {
     if (this.heading.vx != 0 | this.heading.vy != 0) {
       this.x += -this.heading.vx*percent;
       this.y += -this.heading.vy*percent;
-      this.x = Math.max(Math.min(this.x, canvas.width-10), 10);
-      this.y = Math.max(Math.min(this.y, canvas.height-10), 10);
+      this.x = Math.max(Math.min(this.x, canvas.width-this.size), this.size);
+      this.y = Math.max(Math.min(this.y, canvas.height-this.size), this.size);
     }
   }
 }
 
-var canvasTargetHeight = 1000;
+var width = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var height = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+var ratio = canvas.width/document.getElementById("canvas").clientWidth;
+var canvasTargetHeight = height * ratio;
+
 var mouseX, mouseY;
 document.onmousemove = getMousePos;
 canvas.addEventListener('click', shrinkCanvas);
@@ -77,7 +92,35 @@ function getMousePos(evt) {
 }
 
 function shrinkCanvas(evt) {
-  canvasTargetHeight = 300;
+  if (mouseC < canvas.width / 40) {
+    if (mouseCA.tag == "HOME") {
+      canvasTargetHeight = height * ratio;
+      activeAgents = 12;
+      win.style.height = "0px";
+      for (var i=0; i < activeAgents; i++){
+        agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
+                                 Math.random()*20+canvasTargetHeight/2-10,
+                                 tags[i], sizes[i]);
+      }
+    }
+    else {
+      canvasTargetHeight = canvas.width/10;
+      activeAgents = 5;
+      agents.length = 5;
+      win.style.height = (height-canvasTargetHeight/ratio) + "px";
+      switch (mouseCA.tag) {
+        case "SKILLS":
+          win.innerHTML='<object type="text/html" data="Skills.html" style="width: 100%; height:100%;"></object>';
+          break;
+
+        case "CV":
+          win.innerHTML='<object type="text/html" data="CV.html" style="width: 100%; height:100%;"></object>';
+          break;
+        default:
+          break;
+      }
+    }
+  }
 }
 
 function remapRange(val, sMin, sMax, tMin, tMax) {
@@ -87,11 +130,16 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
   return Math.max(Math.min((val / sRange) * tRange + tMin, tMin), tMax);
 }
 
-var tags = ["LINKEDIN", "INSTAGRAM", "GITHUB", "FACEBOOK", "PROJECTS", "SKILLS",
- "CONTACT", "CV", "PUBLICATIONS", "PROJECT1", "PROJECT2", "PROJECT3"];
-var sizes = [30, 30, 30, 30, 50, 40, 40, 30, 50, 30, 40, 40]
+
+var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "FACEBOOK",
+"GITHUB", "P2", "INSTAGRAM", "P1", "PUBLICATIONS", "LINKEDIN"];
+var sizes = [60, 50, 50, 50, 50, 40, 40, 30, 30, 30, 30, 30]
+var activeAgents = 12;
+var mouseC;
+var mouseCA;
+
 var agents = [];
-for (var i=0; i < 12; i++){
+for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
                            Math.random()*20+canvas.height/2-10,
                            tags[i], sizes[i]);
@@ -105,40 +153,40 @@ ctx.stroke();
 
 var id = setInterval(frame, 2);
 function frame() {
+  mouseC = canvas.width;
   canvas.height += .05 * (canvasTargetHeight - canvas.height);
 
+  // clean Canvas
   ctx.fillStyle = "white";
   ctx.globalAlpha = 0.1;
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.globalAlpha = 1;
 
-  for (var i=0; i < agents.length; i++){
+  for (var i=0; i < activeAgents; i++){
     agents[i].updateHeading(agents);
   }
 
-  var mouseCA; // = agents[0];
-  var mouseC = canvas.width;
-  for (var i=0; i < agents.length; i++){
+  for (var i=0; i < activeAgents; i++){
     var mD = agents[i].distanceTo(mouseX, mouseY);
-    if (mD < mouseC) {
+    if (mD < mouseC & mouseY < canvas.height) {
       mouseC = mD;
       mouseCA = agents[i];
     }
   }
 
-  for (var i=0; i < agents.length; i++){
-    if (agents[i] == mouseCA) {
+  for (var i=0; i < activeAgents; i++){
+    if (agents[i] == mouseCA  & mouseY < canvas.height) {
       mouseCA.updatePos(Math.min(2,
         mouseCA.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
     }
     else {
       var v = remapRange(agents[i].clearance,
-        canvas.width/20, canvas.width/10, 10, 0.1);
+        canvas.width/20, canvas.width/11, 8, 0.1);
       agents[i].updatePos(v);
     }
   }
 
-  for (var i=0; i < agents.length; i++){
+  for (var i=0; i < activeAgents; i++){
     ctx.beginPath();
     ctx.lineWidth = remapRange(agents[i].clearance,
       canvas.width/20, canvas.width/10, 30, 1);
@@ -160,16 +208,22 @@ function frame() {
     ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
     ctx.stroke();
 
-    if (mouseC < 50) {
+    if (mouseC < canvas.width / 40) {
       ctx.fillStyle = "black";
       ctx.beginPath();
-      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 7*mouseCA.size, 2*mouseCA.size);
+      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 8*mouseCA.size, 2*mouseCA.size);
       ctx.fill();
       ctx.font = "normal " + mouseCA.size + "px roboto";
       ctx.fillStyle = "white";
       ctx.fillText(mouseCA.tag,
-        mouseCA.x-mouseCA.size/2, mouseCA.y+mouseCA.size/3, 7*mouseCA.size);
+        mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 8*mouseCA.size);
     }
+  }
+
+  for (var i=0; i < activeAgents; i++){
+    ctx.drawImage(document.getElementById(agents[i].tag),
+      agents[i].x-agents[i].size, agents[i].y-agents[i].size,
+      agents[i].size*2, agents[i].size*2);
   }
   // clearInterval(id);
 }
