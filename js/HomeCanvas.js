@@ -118,7 +118,7 @@ function shrinkCanvas(evt) {
       }
     }
     else {
-      canvasTargetHeight = Math.max(canvas.width, canvas.height)/10;
+      canvasTargetHeight = Math.max(width, height)/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
       win.style.height = (height-canvasTargetHeight/ratio) + "px";
@@ -165,7 +165,6 @@ for (var i=0; i < activeAgents; i++){
                            Math.random()*20+canvas.height/2-10,
                            tags[i], (sizes[i]/1500)*scalar*ratio);
 }
-console.log(agents[0].size);
 
 ctx.beginPath();
 for (var i=0; i < agents.length; i++){
