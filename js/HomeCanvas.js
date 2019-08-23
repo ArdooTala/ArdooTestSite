@@ -161,7 +161,7 @@ var agents = [];
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
                            Math.random()*20+canvas.height/2-10,
-                           tags[i], (sizes[i]/2000)*Math.max(canvas.width, canvas.height));
+                           tags[i], (sizes[i]/2000)*Math.max(canvas.width, canvasTargetHeight));
 }
 
 ctx.beginPath();
