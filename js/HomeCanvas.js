@@ -95,7 +95,15 @@ function shrinkCanvas(evt) {
   var rect = canvas.getBoundingClientRect();
   mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
   mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
-  frame();
+
+  mouseC = canvas.width;
+  for (var i=0; i < activeAgents; i++){
+    var mD = agents[i].distanceTo(mouseX, mouseY);
+    if (mD < mouseC & mouseY < canvas.height) {
+      mouseC = mD;
+      mouseCA = agents[i];
+    }
+  }
 
   if (mouseC < canvas.width / 40) {
     if (mouseCA.tag == "HOME") {
