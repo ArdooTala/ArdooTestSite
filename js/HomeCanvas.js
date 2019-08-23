@@ -117,7 +117,13 @@ function shrinkCanvas(evt) {
         case "CV":
           win.innerHTML='<object type="text/html" data="CV.html" style="width: 100%; height:100%;"></object>';
           break;
+
+        case "PUBLICATIONS":
+          win.innerHTML='<object type="text/html" data="CV.html" style="width: 100%; height:100%;"></object>';
+          break;
+
         default:
+          win.style.height = "0px";
           break;
       }
     }
@@ -132,9 +138,9 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
 }
 
 
-var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "FACEBOOK",
-"GITHUB", "P2", "INSTAGRAM", "P1", "PUBLICATIONS", "LINKEDIN"];
-var sizes = [60, 50, 50, 50, 50, 40, 40, 30, 30, 30, 30, 30]
+var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
+"GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
+var sizes = [60, 50, 50, 40, 50, 40, 30, 30, 30, 30, 30, 30]
 var activeAgents = 12;
 var mouseC;
 var mouseCA;
@@ -222,9 +228,11 @@ function frame() {
   }
 
   for (var i=0; i < activeAgents; i++){
-    ctx.drawImage(document.getElementById(agents[i].tag),
-      agents[i].x-agents[i].size, agents[i].y-agents[i].size,
-      agents[i].size*2, agents[i].size*2);
+    if (document.getElementById(agents[i].tag)){
+      ctx.drawImage(document.getElementById(agents[i].tag),
+        agents[i].x-agents[i].size, agents[i].y-agents[i].size,
+        agents[i].size*2, agents[i].size*2);
+    }
   }
   // clearInterval(id);
 }
