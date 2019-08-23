@@ -30,8 +30,10 @@ class LinkNode {
 
   updateHeading(others){
     // Min distance to edge.
-    var nx = Math.min(this.x+200, canvas.width+200-this.x)*(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-    var ny = Math.min(this.y+200, canvas.height+200-this.y)*(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
+    var nx = Math.min(this.x+200,
+      canvas.width+200-this.x)*(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
+    var ny = Math.min(this.y+200,
+      canvas.height+200-this.y)*(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
     var d = Math.min(Math.abs(nx), Math.abs(ny));
 
     if (Math.abs(nx) > Math.abs(ny)) nx = 0;
@@ -63,18 +65,19 @@ class LinkNode {
   }
 }
 
+var canvasTargetHeight = 1000;
 var mouseX, mouseY;
 document.onmousemove = getMousePos;
+canvas.addEventListener('click', shrinkCanvas);
 
 function getMousePos(evt) {
-    var rect = canvas.getBoundingClientRect();
-    mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
-    mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
-    // ctx.strokeStyle = "red";
-    // ctx.beginPath();
-    // ctx.arc(mouseX, mouseY, 60, 0, 2*Math.PI);
-    // ctx.stroke();
-    // ctx.strokeStyle = "black";
+  var rect = canvas.getBoundingClientRect();
+  mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
+  mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
+}
+
+function shrinkCanvas(evt) {
+  canvasTargetHeight = 300;
 }
 
 function remapRange(val, sMin, sMax, tMin, tMax) {
@@ -86,7 +89,7 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
 
 var tags = ["LINKEDIN", "INSTAGRAM", "GITHUB", "FACEBOOK", "PROJECTS", "SKILLS",
  "CONTACT", "CV", "PUBLICATIONS", "PROJECT1", "PROJECT2", "PROJECT3"];
-var sizes = [3, 3, 3, 3, 10, 8, 5, 6, 5, 3, 7, 5]
+var sizes = [30, 30, 30, 30, 50, 40, 40, 30, 50, 30, 40, 40]
 var agents = [];
 for (var i=0; i < 12; i++){
   agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
@@ -102,6 +105,8 @@ ctx.stroke();
 
 var id = setInterval(frame, 2);
 function frame() {
+  canvas.height += .05 * (canvasTargetHeight - canvas.height);
+
   ctx.fillStyle = "white";
   ctx.globalAlpha = 0.1;
   ctx.fillRect(0,0,canvas.width, canvas.height);
@@ -111,68 +116,59 @@ function frame() {
     agents[i].updateHeading(agents);
   }
 
-  var mouseClosestAgent; // = agents[0];
+  var mouseCA; // = agents[0];
   var mouseC = canvas.width;
   for (var i=0; i < agents.length; i++){
     var mD = agents[i].distanceTo(mouseX, mouseY);
     if (mD < mouseC) {
       mouseC = mD;
-      mouseClosestAgent = agents[i];
+      mouseCA = agents[i];
     }
   }
 
   for (var i=0; i < agents.length; i++){
-    if (agents[i] == mouseClosestAgent) {
-      mouseClosestAgent.updatePos(Math.min(2, mouseClosestAgent.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
+    if (agents[i] == mouseCA) {
+      mouseCA.updatePos(Math.min(2,
+        mouseCA.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
     }
     else {
-      var v = remapRange(agents[i].clearance, canvas.width/20, canvas.width/10, 10, 0.2);
+      var v = remapRange(agents[i].clearance,
+        canvas.width/20, canvas.width/10, 10, 0.1);
       agents[i].updatePos(v);
     }
   }
 
-  // Math.min(2, agents[i].distanceTo(agents[i].neighbor.x, agents[i].neighbor.y) / (canvas.width/20))
-  // ctx.beginPath();
-  // ctx.moveTo(agents[agents.length-1].x, agents[agents.length-1].y);
-  // for (var i=0; i < agents.length; i++){
-  //   ctx.lineTo(agents[i].x, agents[i].y);
-  // }
-  // ctx.stroke();
-
   for (var i=0; i < agents.length; i++){
     ctx.beginPath();
-    ctx.lineWidth = remapRange(agents[i].clearance, canvas.width/20, canvas.width/10, 30, 1);
+    ctx.lineWidth = remapRange(agents[i].clearance,
+      canvas.width/20, canvas.width/10, 30, 1);
     ctx.moveTo(agents[i].x, agents[i].y);
     ctx.lineTo(agents[i].neighbor.x, agents[i].neighbor.y);
     ctx.stroke();
 
     ctx.fillStyle = "black";
     ctx.beginPath();
-    ctx.arc(agents[i].x, agents[i].y, 30+0*agents[i].size, 0, 2*Math.PI);
+    ctx.arc(agents[i].x, agents[i].y, agents[i].size, 0, 2*Math.PI);
     ctx.fill();
-    // ctx.fillStyle = "white";
-    // ctx.beginPath();
-    // ctx.arc(agents[i].x, agents[i].y, 40+0*agents[i].size, 0, 2*Math.PI);
-    // ctx.fill();
-    // ctx.font = "bold " + agents[i].size*5 + "px roboto";
-    // ctx.fillText(agents[i].tag, agents[i].x, agents[i].y+10, 1000);
   }
 
-  if (mouseClosestAgent) {
-    mouseClosestAgent.heading = mouseClosestAgent.unitize(mouseClosestAgent.x-mouseX, mouseClosestAgent.y-mouseY);
+  if (mouseCA) {
+    mouseCA.heading = mouseCA.unitize(
+      mouseCA.x-mouseX, mouseCA.y-mouseY);
     ctx.beginPath();
     ctx.lineWidth = 1;
-    ctx.arc(mouseClosestAgent.x, mouseClosestAgent.y, 40, 0, 2*Math.PI);
+    ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
     ctx.stroke();
 
     if (mouseC < 50) {
       ctx.fillStyle = "black";
       ctx.beginPath();
-      ctx.rect(mouseClosestAgent.x, mouseClosestAgent.y-30, 250, 60);
+      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 7*mouseCA.size, 2*mouseCA.size);
       ctx.fill();
-      ctx.font = "normal " + 30 + "px roboto";
+      ctx.font = "normal " + mouseCA.size + "px roboto";
       ctx.fillStyle = "white";
-      ctx.fillText(mouseClosestAgent.tag, mouseClosestAgent.x-15, mouseClosestAgent.y+10, 250);
+      ctx.fillText(mouseCA.tag,
+        mouseCA.x-mouseCA.size/2, mouseCA.y+mouseCA.size/3, 7*mouseCA.size);
     }
   }
   // clearInterval(id);
