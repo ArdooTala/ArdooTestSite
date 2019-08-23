@@ -78,6 +78,7 @@ var height = window.innerHeight
 || document.documentElement.clientHeight
 || document.body.clientHeight;
 
+var longerEdge = Math.max(width, height);
 var ratio = canvas.width/document.getElementById("canvas").clientWidth;
 var canvasTargetHeight = height * ratio;
 
@@ -110,7 +111,7 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
       win.style.height = "0px";
-      var scalar = Math.max(width, height);
+      var scalar = longerEdge;
       for (var i=0; i < activeAgents; i++){
         agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
                                  Math.random()*20+canvasTargetHeight/2-10,
@@ -118,7 +119,7 @@ function shrinkCanvas(evt) {
       }
     }
     else {
-      canvasTargetHeight = Math.max(width, height)/10 * ratio;
+      canvasTargetHeight = longerEdge/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
       win.style.height = (height-canvasTargetHeight/ratio) + "px";
@@ -159,7 +160,7 @@ var mouseC;
 var mouseCA;
 
 var agents = [];
-var scalar = Math.max(width, height);
+var scalar = longerEdge;
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
                            Math.random()*20+canvas.height/2-10,
