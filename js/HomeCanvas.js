@@ -110,11 +110,11 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
       win.style.height = "0px";
-      var scalar = Math.max(document.getElementById("canvas").clientWidth, height);
+      var scalar = Math.max(width, height);
       for (var i=0; i < activeAgents; i++){
-        agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
+        agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
                                  Math.random()*20+canvasTargetHeight/2-10,
-                                 tags[i], (sizes[i]/800)*scalar);
+                                 tags[i], (sizes[i]/1500)*scalar*ratio);
       }
     }
     else {
@@ -159,12 +159,13 @@ var mouseC;
 var mouseCA;
 
 var agents = [];
-var scalar = Math.max(document.getElementById("canvas").clientWidth, height);
+var scalar = Math.max(width, height);
 for (var i=0; i < activeAgents; i++){
-  agents[i] = new LinkNode(Math.random()*1500+canvas.width/2-750,
+  agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
                            Math.random()*20+canvas.height/2-10,
-                           tags[i], (sizes[i]/800)*scalar);
+                           tags[i], (sizes[i]/1500)*scalar*ratio);
 }
+console.log(agents[0].size);
 
 ctx.beginPath();
 for (var i=0; i < agents.length; i++){
