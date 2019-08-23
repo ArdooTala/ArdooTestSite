@@ -80,7 +80,7 @@ var height = window.innerHeight
 
 var longerEdge = Math.max(width, height);
 var ratio = canvas.width/document.getElementById("canvas").clientWidth;
-var canvasTargetHeight = height * ratio * .8;
+var canvasTargetHeight = height * ratio;
 
 var mouseX, mouseY;
 document.onmousemove = getMousePos;
