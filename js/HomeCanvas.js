@@ -92,6 +92,7 @@ function getMousePos(evt) {
 }
 
 function shrinkCanvas(evt) {
+  getMousePos(evt);
   if (mouseC < canvas.width / 40) {
     if (mouseCA.tag == "HOME") {
       canvasTargetHeight = height * ratio;
