@@ -131,7 +131,7 @@ function frame() {
       mouseClosestAgent.updatePos(Math.min(2, mouseClosestAgent.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
     }
     else {
-      agents[i].updatePos(remapRange(agents[i].distanceTo(agents[i].neighbor.x, agents[i].neighbor.y), canvas.width/20, canvas.width/10, 10, 1));
+      agents[i].updatePos(remapRange(agents[i].distanceTo(agents[i].neighbor.x, agents[i].neighbor.y), canvas.width/20, canvas.width/10, 10, .3));
     }
   }
 
@@ -164,5 +164,5 @@ function frame() {
   }
 
   maxDisp++;
-  if (maxDisp > 10000) clearInterval(id);
+  // if (maxDisp > 10000) clearInterval(id);
 }
