@@ -31,16 +31,16 @@ class LinkNode {
 
   updateHeading(others){
     // Min distance to edge.
-    var nx = Math.min(this.x+canvas.width/20, canvas.width-this.x+canvas.width/20)
+    var nx = Math.min(this.x+Math.max(canvas.width, canvas.height)/20, canvas.width-this.x+Math.max(canvas.width, canvas.height)/20)
       *(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-    var ny = Math.min(this.y+canvas.width/20, canvas.height-this.y+canvas.width/20)
+    var ny = Math.min(this.y+Math.max(canvas.width, canvas.height)/20, canvas.height-this.y+Math.max(canvas.width, canvas.height)/20)
       *(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
     var d = Math.min(Math.abs(nx), Math.abs(ny));
 
     if (Math.abs(nx) > Math.abs(ny)) nx = 0;
     else ny = 0;
 
-    var nDis = canvas.width;
+    var nDis = Math.max(canvas.width, canvas.height);
     for (var j=0; j < others.length; j++){
       var nd = this.distanceTo(others[j].x, others[j].y);
       if (nd < nDis & nd > 1) {
@@ -96,7 +96,7 @@ function shrinkCanvas(evt) {
   mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
   mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
 
-  mouseC = canvas.width;
+  mouseC = Math.max(canvas.width, canvas.height);
   for (var i=0; i < activeAgents; i++){
     var mD = agents[i].distanceTo(mouseX, mouseY);
     if (mD < mouseC & mouseY < canvas.height) {
@@ -105,7 +105,7 @@ function shrinkCanvas(evt) {
     }
   }
 
-  if (mouseC < canvas.width / 40) {
+  if (mouseC < Math.max(canvas.width, canvas.height) / 40) {
     if (mouseCA.tag == "HOME") {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
@@ -117,7 +117,7 @@ function shrinkCanvas(evt) {
       }
     }
     else {
-      canvasTargetHeight = canvas.width/10;
+      canvasTargetHeight = Math.max(canvas.width, canvas.height)/10;
       activeAgents = 5;
       agents.length = 5;
       win.style.height = (height-canvasTargetHeight/ratio) + "px";
@@ -172,7 +172,7 @@ ctx.stroke();
 
 var id = setInterval(frame, 2);
 function frame() {
-  mouseC = canvas.width;
+  mouseC = Math.max(canvas.width, canvas.height);
   canvas.height += .05 * (canvasTargetHeight - canvas.height);
 
   // clean Canvas
@@ -196,11 +196,11 @@ function frame() {
   for (var i=0; i < activeAgents; i++){
     if (agents[i] == mouseCA  & mouseY < canvas.height) {
       mouseCA.updatePos(Math.min(2,
-        mouseCA.distanceTo(mouseX, mouseY)/ (canvas.width/20)));
+        mouseCA.distanceTo(mouseX, mouseY)/ (Math.max(canvas.width, canvas.height)/20)));
     }
     else {
       var v = remapRange(agents[i].clearance,
-        canvas.width/20, canvas.width/11, 8, 0.1);
+        Math.max(canvas.width, canvas.height)/20, Math.max(canvas.width, canvas.height)/11, 8, 0.1);
       agents[i].updatePos(v);
     }
   }
@@ -208,7 +208,7 @@ function frame() {
   for (var i=0; i < activeAgents; i++){
     ctx.beginPath();
     ctx.lineWidth = remapRange(agents[i].clearance,
-      canvas.width/20, canvas.width/10, 30, 1);
+      Math.max(canvas.width, canvas.height)/20, Math.max(canvas.width, canvas.height)/10, 30, 1);
     ctx.moveTo(agents[i].x, agents[i].y);
     ctx.lineTo(agents[i].neighbor.x, agents[i].neighbor.y);
     ctx.stroke();
@@ -227,7 +227,7 @@ function frame() {
     ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
     ctx.stroke();
 
-    if (mouseC < canvas.width / 40) {
+    if (mouseC < Math.max(canvas.width, canvas.height) / 40) {
       ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 8*mouseCA.size, 2*mouseCA.size);
