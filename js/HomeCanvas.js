@@ -123,6 +123,8 @@ function shrinkCanvas(evt) {
 
   if (mouseC < longerEdge*ratio / 40) {
     if (mouseCA.tag == "HOME") {
+      mouseX = canvas.width/2;
+      mouseY = canvas.height/2;
       restDist = longerEdge/12;
       rageDist = longerEdge/20;
       canvasTargetHeight = height * ratio;
