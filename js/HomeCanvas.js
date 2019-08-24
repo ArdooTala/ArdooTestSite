@@ -144,7 +144,7 @@ function shrinkCanvas(evt) {
       activeAgents = 5;
       agents.length = 5;
       for (var j=0; j<activeAgents;j++){
-        agents[j].size = (sizes[j]/300)*longerEdge;
+        agents[j].size = (sizes[j]/12)*canvasTargetHeight;
       }
       win.style.height = (.88*height) + "px";
       restDist = canvasTargetHeight/11;
@@ -193,11 +193,19 @@ function frame() {
     canvas.height += .2 * (canvasTargetHeight - canvas.height);
     document.getElementById("canvas").style.height = canvas.height/ratio+"px";
   }
+
   // clean Canvas
   ctx.fillStyle = "white";
   ctx.globalAlpha = 0.1;
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.globalAlpha = 1;
+
+  // // write to canvas
+  // ctx.font = "normal " + canvas.width/50 + "px roboto";
+  // ctx.fillStyle = "black";
+  // ctx.fillText("ARDESHIR TALAEI", canvas.width/5, canvas.height/3, canvas.width/3);
+  // ctx.font = "normal " + canvas.width/100 + "px roboto";
+  // ctx.fillText("The Man Who Sold The World!", canvas.width/5, canvas.height/3+canvas.width/100, canvas.width/3);
 
   // update headings
   for (var i=0; i < activeAgents; i++){
@@ -262,7 +270,7 @@ function frame() {
       ctx.beginPath();
       ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 6*mouseCA.size, 2*mouseCA.size);
       ctx.fill();
-      ctx.font = "normal " + mouseCA.size + "px roboto";
+      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
       ctx.fillStyle = "white";
       ctx.fillText(mouseCA.tag,
         mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 4.8*mouseCA.size);
