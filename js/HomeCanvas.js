@@ -154,7 +154,7 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
-var sizes = [60, 50, 50, 40, 50, 40, 30, 30, 30, 30, 30, 30]
+var sizes = [60, 40, 40, 40, 40, 40, 30, 30, 30, 30, 30, 30]
 var activeAgents = 12;
 var mouseC;
 var mouseCA;
@@ -233,12 +233,12 @@ function frame() {
     if (mouseC < Math.max(canvas.width, canvas.height) / 40) {
       ctx.fillStyle = "black";
       ctx.beginPath();
-      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 8*mouseCA.size, 2*mouseCA.size);
+      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 6*mouseCA.size, 2*mouseCA.size);
       ctx.fill();
       ctx.font = "normal " + mouseCA.size + "px roboto";
       ctx.fillStyle = "white";
       ctx.fillText(mouseCA.tag,
-        mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 8*mouseCA.size);
+        mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 4.8*mouseCA.size);
     }
   }
 
