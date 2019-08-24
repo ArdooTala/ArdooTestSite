@@ -19,6 +19,16 @@ button:focus {
   outline-width: 0px;
 }
 
+.container{
+
+  min-width: 100%;
+}
+
+.row{
+
+  min-width: 100%;
+}
+
 .banner{
   height:auto;
 }
