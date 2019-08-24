@@ -183,6 +183,7 @@ function frame() {
   // canvas size resize step.
   if (Math.abs(canvasTargetHeight-canvas.height)>15) {
     canvas.height += .2 * (canvasTargetHeight - canvas.height);
+    document.getElementById("canvas").style.height = canvas.height/ratio;
   }
   // clean Canvas
   ctx.fillStyle = "white";
