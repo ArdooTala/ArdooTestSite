@@ -238,14 +238,7 @@ function frame() {
 
   // draw mouseClosestAgent
   if (mouseCA) {
-    if (mouseC < 120 & mouseY < canvas.height) {
-      ctx.beginPath();
-      ctx.lineWidth = 3;
-      ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+5, 0, 2*Math.PI);
-      ctx.stroke();
-    }
-
-    if (mouseC < longerEdge / 40) {
+    if (mouseC < longerEdge / 40 & mouseY < canvas.height) {
       ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 6*mouseCA.size, 2*mouseCA.size);
@@ -255,6 +248,15 @@ function frame() {
       ctx.fillText(mouseCA.tag,
         mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 4.8*mouseCA.size);
     }
+
+    ctx.strokeStyle = "white";
+    if (mouseC < 120 & mouseY < canvas.height & false) {
+      ctx.beginPath();
+      ctx.lineWidth = 1;
+      ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size-3, 0, 2*Math.PI);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = "black";
   }
 
   // draw Icons
