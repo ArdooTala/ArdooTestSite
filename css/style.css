@@ -1,7 +1,15 @@
 body{
   font-size: 12px;
   min-width: 100%;
-  }
+}
+
+.row{
+  min-width: 100%;
+}
+
+.container{
+  min-width: 100%;
+}
 
 button{
   background: transparent;
