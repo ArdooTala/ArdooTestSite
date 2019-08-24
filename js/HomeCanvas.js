@@ -203,7 +203,7 @@ function frame() {
     }
     else {
       var v = remapRange(agents[i].clearance,
-        Math.max(canvas.width, canvas.height)/20, Math.max(canvas.width, canvas.height)/11, 8, 0.1);
+        longerEdge*ratio/20, longerEdge*ratio/11, 8, 0.1);
       agents[i].updatePos(v);
     }
   }
