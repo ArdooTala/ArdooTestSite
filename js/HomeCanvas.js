@@ -177,6 +177,15 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
   return Math.max(Math.min(((val-sMin)/sRange)*tRange+tMin, tMin), tMax);
 }
 
+function getWidthOfText(txt, font){
+    if(getWidthOfText.c === undefined){
+        getWidthOfText.c=document.createElement('canvas');
+        getWidthOfText.ctx=getWidthOfText.c.getContext('2d');
+    }
+    getWidthOfText.ctx.font = font;
+    return getWidthOfText.ctx.measureText(txt).width;
+}
+
 var agents = [];
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
@@ -266,19 +275,27 @@ function frame() {
     }
 
     if (mouseC < longerEdge / 40 & mouseY < canvas.height) {
+      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
+      var tWidth = getWidthOfText(mouseCA.tag, "normal " + mouseCA.size/2 + "px roboto");
+
       ctx.fillStyle = "black";
       ctx.beginPath();
-      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 6*mouseCA.size, 2*mouseCA.size);
+      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 1.3*mouseCA.size+tWidth, 2*mouseCA.size);
       ctx.fill();
-      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
+
       ctx.fillStyle = "white";
-      ctx.fillText(mouseCA.tag,
-        mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 4.8*mouseCA.size);
+      ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/6);
     }
   }
 
   // draw Icons
   for (var i=0; i < activeAgents; i++){
+    // ctx.font = "normal " + agents[0].size/6 + "px roboto";
+    // ctx.fillStyle = "black";
+    // ctx.fillText(agents[i].tag,
+    //   agents[i].x+1.1*agents[i].size, agents[i].y+agents[i].size/18, 4.8*agents[i].size);
+    // ctx.fillStyle = "white";
+
     if (document.getElementById(agents[i].tag)){
       ctx.drawImage(document.getElementById(agents[i].tag),
         agents[i].x-agents[i].size, agents[i].y-agents[i].size,
