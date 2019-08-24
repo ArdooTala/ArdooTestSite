@@ -178,7 +178,7 @@ for (var i=0; i < activeAgents; i++){
                            tags[i], (sizes[i]/100)*longerEdge);
 }
 
-document.getElementById("canvas").style.height = canvas.height/ratio;
+document.getElementById("canvas").style.height = 500;
 
 var id = setInterval(frame, 2);
 function frame() {
