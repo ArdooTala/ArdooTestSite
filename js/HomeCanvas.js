@@ -267,7 +267,7 @@ function frame() {
 
   // draw mouseClosestAgent
   if (mouseCA) {
-    if (mouseC < longerEdge / 10 & mouseY < canvas.height) {
+    if (mouseC < mouseCA.size*2.5 & mouseY < canvas.height) {
       ctx.beginPath();
       ctx.lineWidth = 3;
       ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
