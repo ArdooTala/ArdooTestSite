@@ -267,6 +267,7 @@ function frame() {
 
   // draw mouseClosestAgent
   if (mouseCA) {
+    ctx.textAlign = "left";
     if (mouseC < mouseCA.size*2.5 & mouseY < canvas.height) {
       ctx.beginPath();
       ctx.lineWidth = 3;
@@ -289,12 +290,13 @@ function frame() {
   }
 
   // draw Icons
+  ctx.font = "normal " + agents[0].size/6 + "px roboto";
+  ctx.textAlign = "center";
   for (var i=0; i < activeAgents; i++){
-    // ctx.font = "normal " + agents[0].size/6 + "px roboto";
-    // ctx.fillStyle = "black";
-    // ctx.fillText(agents[i].tag,
-    //   agents[i].x+1.1*agents[i].size, agents[i].y+agents[i].size/18, 4.8*agents[i].size);
-    // ctx.fillStyle = "white";
+    ctx.fillStyle = "black";
+    ctx.fillText(agents[i].tag,
+      agents[i].x, agents[i].y+agents[i].size+agents[0].size/6);
+    ctx.fillStyle = "white";
 
     if (document.getElementById(agents[i].tag)){
       ctx.drawImage(document.getElementById(agents[i].tag),
