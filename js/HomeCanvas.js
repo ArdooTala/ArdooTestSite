@@ -2,6 +2,33 @@ var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
 var win = document.getElementById("main");
 
+var width = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+
+var height = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+
+var longerEdge = Math.max(width, height);
+
+var ratio = canvas.width/document.getElementById("canvas").clientWidth;
+var canvasTargetHeight = height;
+
+canvas.width = document.getElementById("canvas").clientWidth;
+canvas.height = 500;
+
+var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
+"GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
+var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
+
+var restDist = longerEdge/11;
+var rageDist = longerEdge/20;
+
+var activeAgents = 12;
+var mouseC;
+var mouseCA;
+
 class LinkNode {
   constructor(x, y, tag, size) {
     this.x = x;
@@ -31,16 +58,16 @@ class LinkNode {
 
   updateHeading(others){
     // Min distance to edge.
-    var nx = Math.min(this.x+Math.max(canvas.width, canvas.height)/20, canvas.width-this.x+Math.max(canvas.width, canvas.height)/20)
+    var nx = Math.min(this.x+longerEdge/20, canvas.width-this.x)
       *(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-    var ny = Math.min(this.y+Math.max(canvas.width, canvas.height)/20, canvas.height-this.y+Math.max(canvas.width, canvas.height)/20)
+    var ny = Math.min(this.y+longerEdge/20, canvas.height-this.y+longerEdge/20)
       *(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
     var d = Math.min(Math.abs(nx), Math.abs(ny));
 
     if (Math.abs(nx) > Math.abs(ny)) nx = 0;
     else ny = 0;
 
-    var nDis = Math.max(canvas.width, canvas.height);
+    var nDis = longerEdge;
     for (var j=0; j < others.length; j++){
       var nd = this.distanceTo(others[j].x, others[j].y);
       if (nd < nDis & nd > 1) {
@@ -53,7 +80,7 @@ class LinkNode {
         }
       }
     }
-    this.clearance = d;
+    this.clearance = nDis;
     var nHeading = this.unitize(nx, ny);
     this.heading.vx += 0.1*nHeading.vx;
     this.heading.vy += 0.1*nHeading.vy;
@@ -70,28 +97,15 @@ class LinkNode {
   }
 }
 
-var width = window.innerWidth
-|| document.documentElement.clientWidth
-|| document.body.clientWidth;
-
-var height = window.innerHeight
-|| document.documentElement.clientHeight
-|| document.body.clientHeight;
-
-var longerEdge = Math.max(width, height);
-var ratio = canvas.width/document.getElementById("canvas").clientWidth;
-var canvasTargetHeight = height * ratio;
-
 var mouseX, mouseY;
 document.onmousemove = getMousePos;
-canvas.addEventListener('click', shrinkCanvas);
-
 function getMousePos(evt) {
   var rect = canvas.getBoundingClientRect();
   mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
   mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
 }
 
+canvas.addEventListener('click', shrinkCanvas);
 function shrinkCanvas(evt) {
   var rect = canvas.getBoundingClientRect();
   mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
@@ -108,21 +122,24 @@ function shrinkCanvas(evt) {
 
   if (mouseC < longerEdge*ratio / 40) {
     if (mouseCA.tag == "HOME") {
-      canvasTargetHeight = height * ratio;
+      restDist = longerEdge/11;
+      rageDist = longerEdge/20;
+      canvasTargetHeight = height;
       activeAgents = 12;
       win.style.height = "0px";
-      var scalar = longerEdge;
       for (var i=0; i < activeAgents; i++){
-        agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
+        agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
                                  Math.random()*20+canvasTargetHeight/2-10,
-                                 tags[i], (sizes[i]/1500)*scalar*ratio);
+                                 tags[i], (sizes[i]/100)*longerEdge);
       }
     }
     else {
-      canvasTargetHeight = longerEdge/10 * ratio;
+      canvasTargetHeight = height/10;
       activeAgents = 5;
       agents.length = 5;
       win.style.height = (height-canvasTargetHeight/ratio) + "px";
+      restDist = canvasTargetHeight/11;
+      rageDist = canvasTargetHeight/20;
       switch (mouseCA.tag) {
         case "SKILLS":
           win.innerHTML='<object type="text/html" data="Skills.html" style="width: 100%; height:100%;"></object>';
@@ -148,46 +165,35 @@ function remapRange(val, sMin, sMax, tMin, tMax) {
   val -= sMin;
   var sRange = sMax - sMin;
   var tRange = tMax - tMin;
-  return Math.max(Math.min((val / sRange) * tRange + tMin, tMin), tMax);
+  return Math.max(Math.min(((val-sMin)/sRange)*tRange+tMin, tMin), tMax);
 }
-
-
-var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
-"GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
-var sizes = [60, 40, 40, 40, 40, 40, 30, 30, 30, 30, 30, 30]
-var activeAgents = 12;
-var mouseC;
-var mouseCA;
 
 var agents = [];
-var scalar = longerEdge;
 for (var i=0; i < activeAgents; i++){
-  agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/2-750,
+  agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
                            Math.random()*20+canvas.height/2-10,
-                           tags[i], (sizes[i]/1500)*scalar*ratio);
+                           tags[i], (sizes[i]/100)*longerEdge);
 }
-
-ctx.beginPath();
-for (var i=0; i < agents.length; i++){
-  ctx.lineTo(agents[i].x, agents[i].y);
-}
-ctx.stroke();
 
 var id = setInterval(frame, 2);
 function frame() {
-  mouseC = Math.max(canvas.width, canvas.height);
-  canvas.height += .05 * (canvasTargetHeight - canvas.height);
-
+  // canvas size resize step.
+  if (Math.abs(canvasTargetHeight-canvas.height)>25) {
+    canvas.height += .05 * (canvasTargetHeight - canvas.height);
+  }
   // clean Canvas
   ctx.fillStyle = "white";
   ctx.globalAlpha = 0.1;
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.globalAlpha = 1;
 
+  // update headings
   for (var i=0; i < activeAgents; i++){
     agents[i].updateHeading(agents);
   }
 
+  // find the mouseClosestAgent and distance to.
+  mouseC = longerEdge;
   for (var i=0; i < activeAgents; i++){
     var mD = agents[i].distanceTo(mouseX, mouseY);
     if (mD < mouseC & mouseY < canvas.height) {
@@ -196,22 +202,30 @@ function frame() {
     }
   }
 
+  // change mouseClosestAgent heading towards the mouse.
+  if (mouseCA) {
+    if (mouseC < 100 & mouseY < canvas.height) {
+      mouseCA.heading = mouseCA.unitize(mouseCA.x-mouseX, mouseCA.y-mouseY);
+    }
+  }
+
+  // update Positions
   for (var i=0; i < activeAgents; i++){
-    if (agents[i] == mouseCA  & mouseY < canvas.height) {
-      mouseCA.updatePos(Math.min(2,
-        mouseCA.distanceTo(mouseX, mouseY)/ (Math.max(canvas.width, canvas.height)/20)));
+    if (agents[i]==mouseCA & mouseY<canvas.height & mouseC < 100) {
+      mouseCA.updatePos(Math.min(.5, 20*mouseC/longerEdge));
     }
     else {
       var v = remapRange(agents[i].clearance,
-        longerEdge*ratio/20, longerEdge*ratio/11, 8, 0.1);
+        rageDist, restDist, 8, 0.1);
       agents[i].updatePos(v);
     }
   }
 
+  //Draw lines and circles.
   for (var i=0; i < activeAgents; i++){
     ctx.beginPath();
     ctx.lineWidth = remapRange(agents[i].clearance,
-      Math.max(canvas.width, canvas.height)/20, Math.max(canvas.width, canvas.height)/10, 30, 1);
+      longerEdge/20, longerEdge/9, 30, 1);
     ctx.moveTo(agents[i].x, agents[i].y);
     ctx.lineTo(agents[i].neighbor.x, agents[i].neighbor.y);
     ctx.stroke();
@@ -222,15 +236,16 @@ function frame() {
     ctx.fill();
   }
 
+  // draw mouseClosestAgent
   if (mouseCA) {
-    mouseCA.heading = mouseCA.unitize(
-      mouseCA.x-mouseX, mouseCA.y-mouseY);
-    ctx.beginPath();
-    ctx.lineWidth = 1;
-    ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
-    ctx.stroke();
+    if (mouseC < 120 & mouseY < canvas.height) {
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+5, 0, 2*Math.PI);
+      ctx.stroke();
+    }
 
-    if (mouseC < Math.max(canvas.width, canvas.height) / 40) {
+    if (mouseC < longerEdge / 40) {
       ctx.fillStyle = "black";
       ctx.beginPath();
       ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 6*mouseCA.size, 2*mouseCA.size);
@@ -242,6 +257,7 @@ function frame() {
     }
   }
 
+  // draw Icons
   for (var i=0; i < activeAgents; i++){
     if (document.getElementById(agents[i].tag)){
       ctx.drawImage(document.getElementById(agents[i].tag),
