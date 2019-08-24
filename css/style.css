@@ -1,21 +1,11 @@
 body{
   font-size: 12px;
-  min-width: 100%;
 }
 
 canvas{
   height: auto;
   min-width: 100%;
-  height: 100%;
   border-bottom: 1px solid black;
-}
-
-.row{
-  min-width: 100%;
-}
-
-.container{
-  min-width: 100%;
 }
 
 button{
