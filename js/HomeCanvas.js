@@ -23,7 +23,7 @@ var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
 var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 
-var restDist = longerEdge/11;
+var restDist = longerEdge/12;
 var rageDist = longerEdge/20;
 
 var activeAgents = 12;
@@ -123,7 +123,7 @@ function shrinkCanvas(evt) {
 
   if (mouseC < longerEdge*ratio / 40) {
     if (mouseCA.tag == "HOME") {
-      restDist = longerEdge/11;
+      restDist = longerEdge/12;
       rageDist = longerEdge/20;
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
@@ -138,7 +138,7 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
-      win.style.height = (.95*height-canvasTargetHeight/ratio) + "px";
+      win.style.height = (.88*height) + "px";
       restDist = canvasTargetHeight/11;
       rageDist = canvasTargetHeight/13;
       switch (mouseCA.tag) {
