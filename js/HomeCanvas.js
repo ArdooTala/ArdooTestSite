@@ -138,7 +138,7 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
-      win.style.height = (height-canvasTargetHeight/ratio) + "px";
+      win.style.height = (.95*height-canvasTargetHeight/ratio) + "px";
       restDist = canvasTargetHeight/11;
       rageDist = canvasTargetHeight/13;
       switch (mouseCA.tag) {
