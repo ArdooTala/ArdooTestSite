@@ -144,7 +144,7 @@ function shrinkCanvas(evt) {
       activeAgents = 5;
       agents.length = 5;
       for (var j=0; j<activeAgents;j++){
-        agents[j].size /= 3;
+        agents[j].size = (sizes[i]/300)*longerEdge;
       }
       win.style.height = (.88*height) + "px";
       restDist = canvasTargetHeight/11;
