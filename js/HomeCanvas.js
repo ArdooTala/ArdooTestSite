@@ -106,7 +106,7 @@ function shrinkCanvas(evt) {
     }
   }
 
-  if (mouseC < Math.max(canvas.width, canvas.height) / 40) {
+  if (mouseC < longerEdge*ratio / 40) {
     if (mouseCA.tag == "HOME") {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
