@@ -128,6 +128,9 @@ function shrinkCanvas(evt) {
       mouseY = 0;
       restDist = longerEdge/15;
       rageDist = longerEdge/20;
+      for (var j=0; j<activeAgents;j++){
+        agents[j].size = (sizes[j]/100)*longerEdge;
+      }
       activeAgents = 12;
       win.style.height = "0px";
       for (var i=5; i < activeAgents; i++){
@@ -140,6 +143,9 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
+      for (var j=0; j<activeAgents;j++){
+        agents[j].size /= 3;
+      }
       win.style.height = (.88*height) + "px";
       restDist = canvasTargetHeight/11;
       rageDist = canvasTargetHeight/13;
