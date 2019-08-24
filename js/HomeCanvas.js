@@ -178,14 +178,14 @@ for (var i=0; i < activeAgents; i++){
                            tags[i], (sizes[i]/100)*longerEdge);
 }
 
-document.getElementById("canvas").style.height = canvas.height/ratio+"px";
+// document.getElementById("canvas").style.height = canvas.height/ratio+"px";
 
 var id = setInterval(frame, 2);
 function frame() {
   // canvas size resize step.
   if (Math.abs(canvasTargetHeight-canvas.height)>15) {
     canvas.height += .2 * (canvasTargetHeight - canvas.height);
-    document.getElementById("canvas").style.height = canvas.height/ratio+"px";
+    // document.getElementById("canvas").style.height = canvas.height/ratio+"px";
   }
   // clean Canvas
   ctx.fillStyle = "white";
