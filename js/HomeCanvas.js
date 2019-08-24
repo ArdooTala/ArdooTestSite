@@ -140,7 +140,7 @@ function shrinkCanvas(evt) {
       agents.length = 5;
       win.style.height = (height-canvasTargetHeight) + "px";
       restDist = canvasTargetHeight/11;
-      rageDist = canvasTargetHeight/20;
+      rageDist = canvasTargetHeight/13;
       switch (mouseCA.tag) {
         case "SKILLS":
           win.innerHTML='<object type="text/html" data="Skills.html" style="width: 100%; height:100%;"></object>';
