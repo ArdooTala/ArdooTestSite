@@ -10,12 +10,13 @@ var height = window.innerHeight
   || document.documentElement.clientHeight
   || document.body.clientHeight;
 
-var longerEdge = Math.max(width, height);
+var ratio = 3;
+var longerEdge = Math.max(width, height) * ratio;
 
-var ratio = canvas.width/document.getElementById("canvas").clientWidth;
-var canvasTargetHeight = height;
+// var ratio = canvas.width/document.getElementById("canvas").clientWidth;
+var canvasTargetHeight = height * ratio;
 
-canvas.width = document.getElementById("canvas").clientWidth;
+canvas.width = document.getElementById("canvas").clientWidth * ratio;
 canvas.height = 500;
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
@@ -124,7 +125,7 @@ function shrinkCanvas(evt) {
     if (mouseCA.tag == "HOME") {
       restDist = longerEdge/11;
       rageDist = longerEdge/20;
-      canvasTargetHeight = height;
+      canvasTargetHeight = height * ratio;
       activeAgents = 12;
       win.style.height = "0px";
       for (var i=0; i < activeAgents; i++){
@@ -134,10 +135,10 @@ function shrinkCanvas(evt) {
       }
     }
     else {
-      canvasTargetHeight = height/10;
+      canvasTargetHeight = height/10 * ratio;
       activeAgents = 5;
       agents.length = 5;
-      win.style.height = (height-canvasTargetHeight/ratio) + "px";
+      win.style.height = (height-canvasTargetHeight) + "px";
       restDist = canvasTargetHeight/11;
       rageDist = canvasTargetHeight/20;
       switch (mouseCA.tag) {
@@ -238,6 +239,13 @@ function frame() {
 
   // draw mouseClosestAgent
   if (mouseCA) {
+    if (mouseC < 120 & mouseY < canvas.height) {
+      ctx.beginPath();
+      ctx.lineWidth = 3;
+      ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size+10, 0, 2*Math.PI);
+      ctx.stroke();
+    }
+
     if (mouseC < longerEdge / 40 & mouseY < canvas.height) {
       ctx.fillStyle = "black";
       ctx.beginPath();
@@ -248,15 +256,6 @@ function frame() {
       ctx.fillText(mouseCA.tag,
         mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/3, 4.8*mouseCA.size);
     }
-
-    ctx.strokeStyle = "white";
-    if (mouseC < 120 & mouseY < canvas.height & false) {
-      ctx.beginPath();
-      ctx.lineWidth = 1;
-      ctx.arc(mouseCA.x, mouseCA.y, mouseCA.size-3, 0, 2*Math.PI);
-      ctx.stroke();
-    }
-    ctx.strokeStyle = "black";
   }
 
   // draw Icons
