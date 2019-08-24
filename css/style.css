@@ -1,5 +1,6 @@
 body{
   font-size: 12px;
+  min-width: 100%;
   }
 
 button{
@@ -67,7 +68,7 @@ button:focus {
 
 canvas{
   height: auto;
-  min-height: 1000;
+  min-width: 100%;
   border-bottom: 1px solid black;
 }
 
