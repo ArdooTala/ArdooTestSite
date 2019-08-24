@@ -17,7 +17,7 @@ var longerEdge = Math.max(width, height) * ratio;
 var canvasTargetHeight = height * ratio;
 
 canvas.width = document.getElementById("canvas").clientWidth * ratio;
-canvas.height = 500;
+canvas.height = height * ratio;
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
@@ -128,7 +128,7 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height * ratio;
       activeAgents = 12;
       win.style.height = "0px";
-      for (var i=0; i < activeAgents; i++){
+      for (var i=5; i < activeAgents; i++){
         agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
                                  Math.random()*20+canvasTargetHeight/2-10,
                                  tags[i], (sizes[i]/100)*longerEdge);
@@ -179,8 +179,8 @@ for (var i=0; i < activeAgents; i++){
 var id = setInterval(frame, 2);
 function frame() {
   // canvas size resize step.
-  if (Math.abs(canvasTargetHeight-canvas.height)>25) {
-    canvas.height += .05 * (canvasTargetHeight - canvas.height);
+  if (Math.abs(canvasTargetHeight-canvas.height)>15) {
+    canvas.height += .2 * (canvasTargetHeight - canvas.height);
   }
   // clean Canvas
   ctx.fillStyle = "white";
@@ -217,7 +217,7 @@ function frame() {
     }
     else {
       var v = remapRange(agents[i].clearance,
-        rageDist, restDist, 15, 0.1);
+        rageDist, restDist, 25, 0.1);
       agents[i].updatePos(v);
     }
   }
