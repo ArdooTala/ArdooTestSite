@@ -1,10 +1,9 @@
 body{
   font-size: 12px;
-  min-width: 100%;
 }
 
 canvas{
-  min-width: 100%;
+  width: 100%;
   border-bottom: 1px solid black;
 }
 
@@ -17,16 +16,6 @@ button{
 
 button:focus {
   outline-width: 0px;
-}
-
-.container{
-
-  min-width: 100%;
-}
-
-.row{
-
-  min-width: 100%;
 }
 
 .banner{

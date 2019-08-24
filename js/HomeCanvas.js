@@ -178,6 +178,8 @@ for (var i=0; i < activeAgents; i++){
                            tags[i], (sizes[i]/100)*longerEdge);
 }
 
+document.getElementById("canvas").style.height = canvas.height/ratio;
+
 var id = setInterval(frame, 2);
 function frame() {
   // canvas size resize step.
