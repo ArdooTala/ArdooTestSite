@@ -121,7 +121,7 @@ function shrinkCanvas(evt) {
     }
   }
 
-  if (mouseC < longerEdge*ratio / 40) {
+  if (mouseC < mouseCA.size) {
     if (mouseCA.tag == "HOME") {
       canvasTargetHeight = height * ratio;
       mouseX = 0;
@@ -274,7 +274,7 @@ function frame() {
       ctx.stroke();
     }
 
-    if (mouseC < longerEdge / 40 & mouseY < canvas.height) {
+    if (mouseC < mouseCA.size*1.5 & mouseY < canvas.height) {
       ctx.font = "normal " + mouseCA.size/2 + "px roboto";
       var tWidth = getWidthOfText(mouseCA.tag, "normal " + mouseCA.size/2 + "px roboto");
 
