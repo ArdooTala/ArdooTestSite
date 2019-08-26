@@ -150,7 +150,7 @@ function shrinkCanvas(evt) {
         agents[j].size = (sizes[j]/12)*canvasTargetHeight;
       }
       win.style.height = (.89*height) + "px";
-      restDist = 1.5*agents[0].size;// canvasTargetHeight/11;
+      restDist = 1.2*agents[0].size;// canvasTargetHeight/11;
       rageDist = agents[0].size;// canvasTargetHeight/13;
       switch (mouseCA.tag) {
         case "SKILLS":
