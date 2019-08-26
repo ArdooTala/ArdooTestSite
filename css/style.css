@@ -140,3 +140,7 @@ button:focus {
  .main{
    min-width: 100%;
  }
+
+ .contact{
+   text-align: center;
+ }
