@@ -266,11 +266,11 @@ function frame() {
   // update Positions
   for (var i=0; i < activeAgents; i++){
     if (agents[i]==mouseCA & mouseY<canvas.height & mouseC < longerEdge/10) {
-      mouseCA.updatePos(Math.min(3, mouseC/mouseCA.size));
+      mouseCA.updatePos(Math.min(longerEdge/500, mouseC/mouseCA.size));
     }
     else {
       var v = remapRange(agents[i].clearance,
-        rageDist, restDist, 30, 0.1);
+        rageDist, restDist, longerEdge/50, 0.1);
       agents[i].updatePos(v);
     }
   }
