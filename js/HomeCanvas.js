@@ -1,5 +1,5 @@
-var c = document.getElementById("canvas");
-var ctx = c.getContext("2d");
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
 var win = document.getElementById("main");
 
 var width = window.innerWidth
@@ -14,6 +14,7 @@ var bannerHeight = document.getElementById('header').clientHeight;
 height -= bannerHeight;
 
 var ratio = 3;
+
 var longerEdge = Math.max(width, height) * ratio;
 
 // var ratio = canvas.width/document.getElementById("canvas").clientWidth;
@@ -21,6 +22,8 @@ var canvasTargetHeight = height * ratio;
 
 canvas.width = document.getElementById("canvas").clientWidth * ratio;
 canvas.height = height * ratio;
+
+document.getElementById("canvas").style.height = canvas.height/ratio+"px";
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
@@ -32,6 +35,24 @@ var margin = longerEdge/20;
 var activeAgents = 12;
 var mouseC;
 var mouseCA;
+
+function remapRange(val, sMin, sMax, tMin, tMax) {
+  if (val < sMin) return tMin;
+  if (val > sMax) return tMax;
+  val -= sMin;
+  var sRange = sMax - sMin;
+  var tRange = tMax - tMin;
+  return ((val-sMin)/sRange)*tRange+tMin;
+}
+
+function getWidthOfText(txt, font){
+    if(getWidthOfText.c === undefined){
+        getWidthOfText.c=document.createElement('canvas');
+        getWidthOfText.ctx=getWidthOfText.c.getContext('2d');
+    }
+    getWidthOfText.ctx.font = font;
+    return getWidthOfText.ctx.measureText(txt).width;
+}
 
 class LinkNode {
   constructor(x, y, tag, size) {
@@ -93,8 +114,6 @@ class LinkNode {
       this.heading.vy += 0.1*nHeading.vy;
     }
     else {
-      console.log(nDis);
-      console.log(this.x + ", " + this.y);
       this.clearance = 0;
       this.heading.vx = Math.random()-.5;
       this.heading.vy = Math.random()-.5;
@@ -113,6 +132,14 @@ class LinkNode {
       console.log("Ga error!");
     }
   }
+}
+
+
+var agents = [];
+for (var i=0; i < activeAgents; i++){
+  agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
+                           Math.random()*20+canvas.height/2-10,
+                           tags[i], (sizes[i]/100)*longerEdge);
 }
 
 var mouseX, mouseY;
@@ -193,33 +220,33 @@ function shrinkCanvas(evt) {
   }
 }
 
-function remapRange(val, sMin, sMax, tMin, tMax) {
-  if (val < sMin) return tMin;
-  if (val > sMax) return tMax;
-  val -= sMin;
-  var sRange = sMax - sMin;
-  var tRange = tMax - tMin;
-  return ((val-sMin)/sRange)*tRange+tMin;
+function resizeCanvas() {
+  width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+  height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+
+  bannerHeight = document.getElementById('header').clientHeight;
+  height -= bannerHeight;
+
+  longerEdge = Math.max(width, height) * ratio;
+
+  canvasTargetHeight = height * ratio;
+
+  canvas.width = document.getElementById("canvas").clientWidth * ratio;
+
+  restDist = (sizes[0]/100)*longerEdge*2;
+  rageDist = (sizes[0]/100)*longerEdge;
+  margin = longerEdge/20;
+
+  for (var j=0; j<activeAgents;j++){
+    agents[j].size = (sizes[j]/100)*longerEdge;
+  }
 }
-
-function getWidthOfText(txt, font){
-    if(getWidthOfText.c === undefined){
-        getWidthOfText.c=document.createElement('canvas');
-        getWidthOfText.ctx=getWidthOfText.c.getContext('2d');
-    }
-    getWidthOfText.ctx.font = font;
-    return getWidthOfText.ctx.measureText(txt).width;
-}
-
-var agents = [];
-for (var i=0; i < activeAgents; i++){
-  agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
-                           Math.random()*20+canvas.height/2-10,
-                           tags[i], (sizes[i]/100)*longerEdge);
-}
-
-document.getElementById("canvas").style.height = canvas.height/ratio+"px";
-
+window.addEventListener("resize", resizeCanvas);
 var id = setInterval(frame, 5);
 function frame() {
   // canvas size resize step.
