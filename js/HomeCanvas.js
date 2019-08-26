@@ -98,6 +98,12 @@ class LinkNode {
       this.x = Math.max(Math.min(this.x, canvas.width-this.size), this.size);
       this.y = Math.max(Math.min(this.y, canvas.height-this.size), this.size);
     }
+    else {
+      this.x += Math.random()*10;
+      this.y += Math.random()*10;;
+      this.x = Math.max(Math.min(this.x, canvas.width-this.size), this.size);
+      this.y = Math.max(Math.min(this.y, canvas.height-this.size), this.size);
+    }
   }
 }
 
