@@ -28,7 +28,7 @@ var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 
 var restDist = longerEdge/15;
 var rageDist = longerEdge/20;
-
+var margin = longerEdge/20;
 var activeAgents = 12;
 var mouseC;
 var mouseCA;
@@ -62,9 +62,9 @@ class LinkNode {
 
   updateHeading(others){
     // Min distance to edge.
-    var nx = Math.min(this.x+longerEdge/20, canvas.width-this.x)
+    var nx = Math.min(this.x+margin, canvas.width-this.x)
       *(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-    var ny = Math.min(this.y+longerEdge/20, canvas.height-this.y+longerEdge/20)
+    var ny = Math.min(this.y+margin, canvas.height-this.y+margin)
       *(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
     var d = Math.min(Math.abs(nx), Math.abs(ny));
 
@@ -131,6 +131,7 @@ function shrinkCanvas(evt) {
       mouseY = height*ratio;
       restDist = longerEdge/15;
       rageDist = longerEdge/20;
+      margin = longerEdge/20;
       for (var j=0; j<activeAgents;j++){
         agents[j].size = (sizes[j]/100)*longerEdge;
       }
@@ -147,10 +148,11 @@ function shrinkCanvas(evt) {
       activeAgents = 5;
       agents.length = 5;
       for (var j=0; j<activeAgents;j++){
-        agents[j].size = (sizes[j]/12)*canvasTargetHeight;
+        agents[j].size = (sizes[0]/12)*canvasTargetHeight;
       }
       win.style.height = (.89*height) + "px";
-      restDist = 1.2*agents[0].size;// canvasTargetHeight/11;
+      margin = 2*agents[0].size;
+      restDist = 2*agents[0].size;// canvasTargetHeight/11;
       rageDist = agents[0].size;// canvasTargetHeight/13;
       switch (mouseCA.tag) {
         case "SKILLS":
