@@ -10,6 +10,9 @@ var height = window.innerHeight
   || document.documentElement.clientHeight
   || document.body.clientHeight;
 
+var bannerHeight = document.getElementById('header').clientHeight;
+height -= bannerHeight;
+
 var ratio = 3;
 var longerEdge = Math.max(width, height) * ratio;
 
@@ -146,7 +149,7 @@ function shrinkCanvas(evt) {
       for (var j=0; j<activeAgents;j++){
         agents[j].size = (sizes[j]/12)*canvasTargetHeight;
       }
-      win.style.height = (.88*height) + "px";
+      win.style.height = (.89*height) + "px";
       restDist = canvasTargetHeight/11;
       rageDist = canvasTargetHeight/13;
       switch (mouseCA.tag) {
@@ -198,7 +201,7 @@ document.getElementById("canvas").style.height = canvas.height/ratio+"px";
 var id = setInterval(frame, 2);
 function frame() {
   // canvas size resize step.
-  if (Math.abs(canvasTargetHeight-canvas.height)>15) {
+  if (Math.abs(canvasTargetHeight-canvas.height)>5) {
     canvas.height += .2 * (canvasTargetHeight - canvas.height);
     document.getElementById("canvas").style.height = canvas.height/ratio+"px";
   }

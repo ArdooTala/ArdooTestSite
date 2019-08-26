@@ -3,7 +3,7 @@ body{
 }
 
 canvas{
-  height: 100px;
+  /* height: 100px; */
   border-bottom: 1px solid black;
 }
 
@@ -28,7 +28,6 @@ button:focus {
   float: left;
   margin-bottom: 2%;
 }
-
 
 .title{
   float: none;
@@ -127,3 +126,17 @@ button:focus {
   float: left;
   overflow: hidden;
 }
+
+.header{
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-style: normal;
+  font-family: roboto;
+  height: auto;
+  min-width: 100%;
+}
+
+ .main{
+   min-width: 100%;
+ }
