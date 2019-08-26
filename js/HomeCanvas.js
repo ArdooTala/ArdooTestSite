@@ -26,8 +26,8 @@ canvas.height = height * ratio;
 document.getElementById("canvas").style.height = canvas.height/ratio+"px";
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
-"GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
-var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
+"GITHUB", "LINKEDIN", "P1", "P2", "INSTAGRAM", "FACEBOOK"];
+var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 2, 2, 2, 2]
 
 var restDist = (sizes[0]/100)*longerEdge*2;
 var rageDist = (sizes[0]/100)*longerEdge;
@@ -110,8 +110,8 @@ class LinkNode {
     if (nDis > 10) {
       this.clearance = nDis;
       var nHeading = this.unitize(nx, ny);
-      this.heading.vx += 0.1*nHeading.vx;
-      this.heading.vy += 0.1*nHeading.vy;
+      this.heading.vx += 0.2*nHeading.vx;
+      this.heading.vy += 0.2*nHeading.vy;
     }
     else {
       this.clearance = 0;
@@ -133,7 +133,6 @@ class LinkNode {
     }
   }
 }
-
 
 var agents = [];
 for (var i=0; i < activeAgents; i++){
