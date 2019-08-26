@@ -26,8 +26,8 @@ var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "GITHUB", "P2", "INSTAGRAM", "P1", "FACEBOOK", "LINKEDIN"];
 var sizes = [6, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3]
 
-var restDist = longerEdge/15;
-var rageDist = longerEdge/20;
+var restDist = (sizes[0]/100)*longerEdge*2;
+var rageDist = (sizes[0]/100)*longerEdge;
 var margin = longerEdge/20;
 var activeAgents = 12;
 var mouseC;
@@ -73,36 +73,44 @@ class LinkNode {
 
     var nDis = longerEdge;
     for (var j=0; j < others.length; j++){
-      var nd = this.distanceTo(others[j].x, others[j].y);
-      if (nd < nDis & nd > 1) {
-        this.neighbor = others[j];
-        nDis = nd;
-        if (nd < d) {
-          d = nd;
-          nx = others[j].x - this.x;;
-          ny = others[j].y - this.y;;
+      if (others[j] != this) {
+        var nd = this.distanceTo(others[j].x, others[j].y);
+        if (nd < nDis) { // & nd > 1
+          this.neighbor = others[j];
+          nDis = nd;
+          if (nd < d) {
+            d = nd;
+            nx = others[j].x - this.x;;
+            ny = others[j].y - this.y;;
+          }
         }
       }
     }
-    this.clearance = nDis;
-    var nHeading = this.unitize(nx, ny);
-    this.heading.vx += 0.1*nHeading.vx;
-    this.heading.vy += 0.1*nHeading.vy;
+    if (nDis > 10) {
+      this.clearance = nDis;
+      var nHeading = this.unitize(nx, ny);
+      this.heading.vx += 0.1*nHeading.vx;
+      this.heading.vy += 0.1*nHeading.vy;
+    }
+    else {
+      console.log(nDis);
+      console.log(this.x + ", " + this.y);
+      this.clearance = 0;
+      this.heading.vx = Math.random()-.5;
+      this.heading.vy = Math.random()-.5;
+    }
     this.heading = this.unitize(this.heading.vx, this.heading.vy);
   }
 
   updatePos(percent){
     if (this.heading.vx != 0 | this.heading.vy != 0) {
-      this.x += -this.heading.vx*percent;
-      this.y += -this.heading.vy*percent;
+      this.x += -this.heading.vx*Math.abs(percent);
+      this.y += -this.heading.vy*Math.abs(percent);
       this.x = Math.max(Math.min(this.x, canvas.width-this.size), this.size);
       this.y = Math.max(Math.min(this.y, canvas.height-this.size), this.size);
     }
-    else {
-      this.x += Math.random()*10;
-      this.y += Math.random()*10;;
-      this.x = Math.max(Math.min(this.x, canvas.width-this.size), this.size);
-      this.y = Math.max(Math.min(this.y, canvas.height-this.size), this.size);
+    else{
+      console.log("Ga error!");
     }
   }
 }
@@ -135,8 +143,8 @@ function shrinkCanvas(evt) {
       canvasTargetHeight = height * ratio;
       mouseX = width*ratio;
       mouseY = height*ratio;
-      restDist = longerEdge/15;
-      rageDist = longerEdge/20;
+      restDist = (sizes[0]/100)*longerEdge*2;
+      rageDist = (sizes[0]/100)*longerEdge;
       margin = longerEdge/20;
       for (var j=0; j<activeAgents;j++){
         agents[j].size = (sizes[j]/100)*longerEdge;
@@ -186,10 +194,12 @@ function shrinkCanvas(evt) {
 }
 
 function remapRange(val, sMin, sMax, tMin, tMax) {
+  if (val < sMin) return tMin;
+  if (val > sMax) return tMax;
   val -= sMin;
   var sRange = sMax - sMin;
   var tRange = tMax - tMin;
-  return Math.max(Math.min(((val-sMin)/sRange)*tRange+tMin, tMin), tMax);
+  return ((val-sMin)/sRange)*tRange+tMin;
 }
 
 function getWidthOfText(txt, font){
@@ -210,7 +220,7 @@ for (var i=0; i < activeAgents; i++){
 
 document.getElementById("canvas").style.height = canvas.height/ratio+"px";
 
-var id = setInterval(frame, 2);
+var id = setInterval(frame, 5);
 function frame() {
   // canvas size resize step.
   if (Math.abs(canvasTargetHeight-canvas.height)>5) {
@@ -260,7 +270,7 @@ function frame() {
     }
     else {
       var v = remapRange(agents[i].clearance,
-        rageDist, restDist, 25, 0.1);
+        rageDist, restDist, 30, 0.1);
       agents[i].updatePos(v);
     }
   }
