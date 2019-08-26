@@ -328,15 +328,19 @@ function frame() {
     }
 
     if (mouseC < mouseCA.size*1.5 & mouseY < canvas.height) {
-      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
       var tWidth = getWidthOfText(mouseCA.tag, "normal " + mouseCA.size/2 + "px roboto");
-      ctx.fillStyle = "black";
-      ctx.beginPath();
-      ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 1.3*mouseCA.size+tWidth, 2*mouseCA.size);
-      ctx.fill();
-
+      // ctx.fillStyle = "black";
+      // ctx.beginPath();
+      // ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 1.3*mouseCA.size+tWidth, 2*mouseCA.size);
+      // ctx.fill();
+      //
+      // ctx.fillStyle = "white";
+      ctx.font = "bold " + mouseCA.size/2 + "px roboto";
       ctx.fillStyle = "white";
-      ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size, mouseCA.y+mouseCA.size/6);
+      ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size+24, mouseCA.y+mouseCA.size/6);
+      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
+      ctx.fillStyle = "black";
+      ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size+24, mouseCA.y+mouseCA.size/6);
     }
   }
 
@@ -348,17 +352,17 @@ function frame() {
     // ctx.beginPath();
     // ctx.rect(agents[i].x - tagWidth/2, agents[i].y+agents[i].size, tagWidth, agents[0].size/5);
     // ctx.fill();
-    ctx.font = "bold " + agents[0].size/6 + "px roboto";
+    ctx.font = "bold " + 24 + "px roboto";
     ctx.fillStyle = "white";
     ctx.fillText(agents[i].tag,
-      agents[i].x, agents[i].y+agents[i].size+agents[0].size/6);
+      agents[i].x, agents[i].y+agents[i].size+24);
     // ctx.fillText(agents[i].tag,
     //   agents[i].x+, agents[i].y+agents[i].size+agents[0].size/6);
 
-    ctx.font = "normal " + agents[0].size/6 + "px roboto";
+    ctx.font = "normal " + 24 + "px roboto";
     ctx.fillStyle = "black";
     ctx.fillText(agents[i].tag,
-      agents[i].x, agents[i].y+agents[i].size+agents[0].size/6);
+      agents[i].x, agents[i].y+agents[i].size+24);
 
     if (document.getElementById(agents[i].tag)){
       ctx.drawImage(document.getElementById(agents[i].tag),
