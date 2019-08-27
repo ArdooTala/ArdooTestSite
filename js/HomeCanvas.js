@@ -220,7 +220,7 @@ function shrinkCanvas(evt) {
           break;
 
         case "FACEBOOK":
-          window.location.href='about:blank';
+          window.location.href='https://www.facebook.com/ardoo.tala';
           break;
 
         case "INSTAGRAM":
