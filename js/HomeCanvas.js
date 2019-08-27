@@ -211,6 +211,22 @@ function shrinkCanvas(evt) {
           win.innerHTML='<object type="text/html" data="contacts.html" style="width: 100%; height:100%;"></object>';
           break;
 
+        case "GITHUB":
+          window.location.href='https://github.com/ArdooTala';
+          break;
+
+        case "LINKEDIN":
+          window.location.href='https://www.linkedin.com/in/ardeshir-talaei-058343178/';
+          break;
+
+        case "FACEBOOK":
+          window.location.href='about:blank';
+          break;
+
+        case "INSTAGRAM":
+          window.location.href='about:blank';
+          break;
+
         default:
           win.style.height = "0px";
           break;
