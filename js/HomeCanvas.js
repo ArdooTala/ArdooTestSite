@@ -224,7 +224,7 @@ function shrinkCanvas(evt) {
           break;
 
         case "INSTAGRAM":
-          window.location.href='about:blank';
+          window.location.href='https://www.instagram.com/ardeshir.talaei/?hl=en';
           break;
 
         default:
