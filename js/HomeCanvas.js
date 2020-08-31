@@ -384,14 +384,14 @@ function frame() {
 
   // change mouseClosestAgent heading towards the mouse.
   if (mouseCA) {
-    if (mouseC < longerEdge/10 & mouseY < canvas.height) {
+    if (!directTo & mouseC < longerEdge/10 & mouseY < canvas.height) {
       mouseCA.heading = mouseCA.unitize(mouseCA.x-mouseX, mouseCA.y-mouseY);
     }
   }
 
   // update Positions
   for (var i=0; i < activeAgents; i++){
-    if (agents[i]==mouseCA & mouseY<canvas.height & mouseC < longerEdge/10) {
+    if (!directTo & agents[i]==mouseCA & mouseY<canvas.height & mouseC < longerEdge/10) {
       mouseCA.updatePos(Math.min(longerEdge/10, mouseC/mouseCA.size));
     }
     else {
@@ -488,6 +488,8 @@ function frame() {
   for (var i=0; i < activeAgents; i++){
     if (agents[i].active) aAgents++;
   }
-  if (aAgents < 4) window.location.href = directTo;
-  // clearInterval(id);
+  if (aAgents < 4) {
+    window.location.href = directTo;
+    clearInterval(id);
+  }
 }
