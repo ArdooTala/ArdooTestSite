@@ -85,18 +85,7 @@ class LinkNode {
   }
 
   updateHeading(others){
-    if (this.forcedDirection == "up"){
-      if (this.y > -10*this.size) {
-        this.heading.vx = 0;
-        this.heading.vy = 1;
-      }
-      else{
-        this.active = false;
-        this.heading.vx = 0;
-        this.heading.vy = 0;
-      }
-    }
-    else if (this.y < this.size) {
+    if (this.y < this.size) {
       this.heading.vx = 0;
       this.heading.vy = -1;
     }
@@ -145,10 +134,33 @@ class LinkNode {
       }
 
       this.heading.vx = 0.95*this.heading.vx + 0.05*nVec.vx;
-      this.heading.vy = 0.95*this.heading.vy + 0.05*nVec.vy;
+      if (this.forcedDirection == "up"){
+        if (this.y > -10*this.size) {
+          this.heading.vy = 1;
+        }
+        else{
+          this.active = false;
+          this.heading.vx = 0;
+          this.heading.vy = 0;
+        }
+      }
+      else{
+        this.heading.vy = 0.95*this.heading.vy + 0.05*nVec.vy;
+      }
 
       if (this.heading.vx*this.heading.vx + this.heading.vy*this.heading.vy > 1) {
         this.heading = this.unitize(this.heading.vx, this.heading.vy);
+      }
+    }
+    if (this.forcedDirection == "up"){
+      if (this.y > -10*this.size) {
+        this.heading.vx = 0;
+        this.heading.vy = 1;
+      }
+      else{
+        this.active = false;
+        this.heading.vx = 0;
+        this.heading.vy = 0;
       }
     }
   }
