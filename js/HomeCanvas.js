@@ -136,7 +136,7 @@ class LinkNode {
       this.heading.vx = 0.95*this.heading.vx + 0.05*nVec.vx;
       if (this.forcedDirection == "up"){
         if (this.y > -10*this.size) {
-          this.heading.vy = remapRange(this.y, 0, canvas.height, 0.5, 1);
+          this.heading.vy = remapRange(this.y, 0, canvas.height, 0.2, 1);
         }
         else{
           this.active = false;
