@@ -85,11 +85,11 @@ class LinkNode {
   }
 
   updateHeading(others){
-    if (this.y < this.size) {
+    if (this.y < this.size & this.forcedDirection == "float") {
       this.heading.vx = 0;
       this.heading.vy = -1;
     }
-    else if (this.forcedDirection == "float"){
+    else {
       // update neighbor
       var nDis;
       if (this.neighbor){
@@ -150,17 +150,6 @@ class LinkNode {
 
       if (this.heading.vx*this.heading.vx + this.heading.vy*this.heading.vy > 1) {
         this.heading = this.unitize(this.heading.vx, this.heading.vy);
-      }
-    }
-    if (this.forcedDirection == "up"){
-      if (this.y > -10*this.size) {
-        this.heading.vx = 0;
-        this.heading.vy = 1;
-      }
-      else{
-        this.active = false;
-        this.heading.vx = 0;
-        this.heading.vy = 0;
       }
     }
   }
