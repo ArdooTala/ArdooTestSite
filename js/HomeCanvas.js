@@ -88,7 +88,7 @@ class LinkNode {
     if (this.forcedDirection == "up"){
       if (this.y > -10*this.size) {
         this.heading.vx = 0;
-        this.heading.vy = 1;
+        this.heading.vy = 1; //Math.random();
       }
       else{
         this.active = false;
