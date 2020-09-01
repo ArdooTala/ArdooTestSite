@@ -7,9 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
   </head>
   <body>
     <div class="container">
+
+      <input class="d-none" style="display: none;" id="canvas_height_percentage" value="100">
+      <input class="d-none" style="display: none;" id="agents_count" value="12">
 
       <div class="imgs d-none" style="display: none;">
         <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
@@ -43,7 +47,7 @@
         <div id="main" class="main col-lg-12" style="overflow: visible;"></div>
       </div>
 
-      <script src="js/HomeCanvas.js"></script>
+      <script src="js/HomeCanvas.js" defer></script>
     </div>
   </body>
 </html>

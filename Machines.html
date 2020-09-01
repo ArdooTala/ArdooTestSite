@@ -7,9 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
   </head>
   <body>
     <div class="container">
+      <div class="imgs d-none" style="display: none;">
+        <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
+        <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
+        <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
+        <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
+        <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
+        <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
+        <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
+        <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
+        <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
+        <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
+        <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
+      </div>
+
+      <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
+      <input class="d-none" style="display: none;" id="agents_count" value="5">
+
+      <div class="row">
+        <canvas id="canvas" class="col-12" width="800"></canvas>
+      </div>
+
+      <div class="row">
+        <div id="header" class="header col-xs-12">
+          <div class="col-xs-11 offset-md-1 align-self-center">
+            <div class="col-xs-12 col-md-auto" style="display: inline-block;">ARDESHIR TALAEI</div>
+            <div class="col-xs-12 col-md-auto" style="display: inline-block; font-size: 10px;">
+              / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</div>
+          </div>
+        </div>
+      </div>
 
       <div class="row">
         <div class="banner col-xs-12 col-lg-4">
@@ -126,6 +157,8 @@
 
         </ul>
       </div>
+
+      <script src="js/HomeCanvas.js" defer></script>
     </div>
   </body>
 </html>
