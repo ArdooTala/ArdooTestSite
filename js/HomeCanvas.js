@@ -2,46 +2,15 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var win = document.getElementById("main");
 
-var width = window.innerWidth
-  || document.documentElement.clientWidth
-  || document.body.clientWidth;
-
-var height = window.innerHeight
-  || document.documentElement.clientHeight
-  || document.body.clientHeight;
-
-var height_percents = parseInt(document.getElementById("canvas_height_percentage").value);
-var activeAgents = parseInt(document.getElementById("agents_count").value);
-//console.log(height_percents);
-
-var bannerHeight = document.getElementById('header').clientHeight;
-height -= bannerHeight;
-
 var ratio = 3;
+var activeAgents = parseInt(document.getElementById("agents_count").value);
 
-// var ratio = canvas.width/document.getElementById("canvas").clientWidth;
-var canvasTargetHeight = height * ratio * height_percents / 100;
-canvas.width = document.getElementById("canvas").clientWidth * ratio;
-canvas.height = canvasTargetHeight;
-
-document.getElementById("canvas").style.height = canvas.height/ratio+"px";
-
+helpers.updateCanvasSize(canvas);
 longerEdge = Math.max(canvas.width, canvas.height);
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
-"MACHINES", "GITHUB", "LINKEDIN", "P2", "INSTAGRAM", "FACEBOOK"];
-var sizes = [6, 3, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1]
-
-var restDist = (sizes[0]/100)*longerEdge*2;
-var rageDist = (sizes[0]/100)*longerEdge;
-// var margin = longerEdge/20;
-var margin = Math.min(canvas.height, canvas.width)/30;
-// var activeAgents = 12;
-var mouseC;
-var mouseCA;
-var directTo;
-
-
+"MACHINES", "GITHUB", "LINKEDIN", "P2", "INSTAGRAM", "FACEBOOK", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+var sizes = [6, 3, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
 var agents = [];
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
@@ -49,152 +18,39 @@ for (var i=0; i < activeAgents; i++){
                            tags[i], (sizes[i]/70)*Math.sqrt(canvas.height*canvas.width));
 }
 
+var restDist = (sizes[0]/100)*longerEdge*3;
+var rageDist = (sizes[0]/100)*longerEdge;
+var margin = Math.min(canvas.height, canvas.width)/30;
+var mouseC;
+var mouseCA;
+var directTo;
 var mouseX, mouseY;
-document.onmousemove = getMousePos;
-function getMousePos(evt) {
-  var rect = canvas.getBoundingClientRect();
-  mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
-  mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
-}
-
-canvas.addEventListener('click', shrinkCanvas);
-function shrinkCanvas(evt) {
-  var rect = canvas.getBoundingClientRect();
-  mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
-  mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
-
-  mouseC = Math.max(canvas.width, canvas.height);
-  for (var i=0; i < activeAgents; i++){
-    var mD = agents[i].distanceTo(mouseX, mouseY);
-    if (mD < mouseC & mouseY < canvas.height) {
-      mouseC = mD;
-      mouseCA = agents[i];
-    }
-  }
-
-  if (mouseC < mouseCA.size) {
-    if (mouseCA.tag == "null") {
-      // canvasTargetHeight = height * ratio;
-      // mouseX = width*ratio;
-      // mouseY = height*ratio;
-      // restDist = (sizes[0]/100)*longerEdge*2;
-      // rageDist = (sizes[0]/100)*longerEdge;
-      // margin = longerEdge/10;
-      // for (var j=0; j<activeAgents;j++){
-      //   agents[j].size = (sizes[j]/100)*longerEdge;
-      // }
-      // activeAgents = 12;
-      // win.style.height = "0px";
-      // for (var i=5; i < activeAgents; i++){
-      //   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
-      //                            Math.random()*20+canvasTargetHeight/2-10,
-      //                            tags[i], Math.min((sizes[i]/100)*longerEdge, Math.min(canvas.width, Math.height)/3)); //(sizes[i]/100)*Math.sqrt(canvas.height*canvas.width))
-      // }
-    }
-    else {
-      for (var i=0; i < activeAgents; i++){
-        agents[i].forcedDirection = "up";
-      }
-      switch (mouseCA.tag) {
-        case "HOME":
-          directTo='index.html';
-          break;
-
-        case "SKILLS":
-          directTo='Skills_New.html';
-          break;
-
-        case "CV":
-          directTo='CV.html';
-          break;
-
-        case "PUBLICATIONS":
-          directTo='CV.html';
-          break;
-
-        case "CONTACT ME":
-          directTo='contacts.html';
-          break;
-
-        case "GITHUB":
-          directTo='https://github.com/ArdooTala';
-          break;
-
-        case "LINKEDIN":
-          directTo='https://www.linkedin.com/in/ardeshir-talaei-058343178/';
-          break;
-
-        case "FACEBOOK":
-          directTo='https://www.facebook.com/ardoo.tala';
-          break;
-
-        case "INSTAGRAM":
-          directTo='https://www.instagram.com/ardeshir.talaei/?hl=en';
-          break;
-
-        case "MACHINES":
-          directTo='Machines.html';
-          break;
-
-        case "PROJECTS":
-          directTo='Machines.html';
-          break;
-
-        default:
-          break;
-      }
-    }
-  }
-}
 
 function resizeCanvas() {
-  width = window.innerWidth
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
-
-  height = window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight;
-
-  bannerHeight = document.getElementById('header').clientHeight;
-  height -= bannerHeight;
-
-  var canvasTargetHeight = height * ratio * height_percents / 100;
-  canvas.width = document.getElementById("canvas").clientWidth * ratio;
-  canvas.height = canvasTargetHeight;
-
+  helpers.updateCanvasSize(canvas);
   longerEdge = Math.max(canvas.width, canvas.height);
 
   for (var j=0; j<activeAgents;j++){
-    agents[j].size = Math.min((sizes[i]/100)*longerEdge, Math.min(canvas.width, math.height)/3);
+    agents[j].size = (sizes[j]/70)*Math.sqrt(canvas.height*canvas.width);
   }
 
-  restDist = agents[0].sizes*2;
-  rageDist = agents[0].sizes;
-  margin = Math.min(longerEdge/20, Math.min(canvas.height, canvas.width)/5);
+  restDist = (sizes[0]/100)*longerEdge*3;
+  rageDist = (sizes[0]/100)*longerEdge;
+  margin = Math.min(canvas.height, canvas.width)/30;
 }
+
+document.onmousemove = helpers.getMousePos;
+canvas.addEventListener('click', helpers.shrinkCanvas);
 window.addEventListener("resize", resizeCanvas);
 
 var id = setInterval(frame, 5);
-function frame() {
-  // canvas size resize step.
-  // if (Math.abs(canvasTargetHeight-canvas.height)>5) {
-  //   canvas.height += .2 * (canvasTargetHeight - canvas.height);
-  //   document.getElementById("canvas").style.height = canvas.height/ratio+"px";
-  // }
 
+function frame() {
   // clean Canvas
   ctx.fillStyle = "black";
   ctx.globalAlpha = .2;
   ctx.fillRect(0,0,canvas.width, canvas.height);
   ctx.globalAlpha = 1;
-
-  // // write to canvas
-  // ctx.font = "normal " + canvas.width/50 + "px roboto";
-  // ctx.fillStyle = "black";
-  // ctx.fillText("ARDESHIR TALAEI", canvas.width/5, canvas.height/3, canvas.width/3);
-  // ctx.font = "normal " + canvas.width/100 + "px roboto";
-  // ctx.fillText("The Man Who Sold The World!", canvas.width/5, canvas.height/3+canvas.width/100, canvas.width/3);
 
   // update headings
   for (var i=0; i < activeAgents; i++){
@@ -253,7 +109,6 @@ function frame() {
     }
   }
 
-
   // ctx.setLineDash([]);
   ctx.strokeStyle = "white";
   ctx.lineWidth = 2;
@@ -276,12 +131,6 @@ function frame() {
 
     if (mouseC < mouseCA.size*1.5 & mouseY < canvas.height) {
       var tWidth = helpers.getWidthOfText(mouseCA.tag, "normal " + mouseCA.size/2 + "px roboto");
-      // ctx.fillStyle = "black";
-      // ctx.beginPath();
-      // ctx.rect(mouseCA.x, mouseCA.y-mouseCA.size, 1.3*mouseCA.size+tWidth, 2*mouseCA.size);
-      // ctx.fill();
-      //
-      // ctx.fillStyle = "white";
       ctx.font = "bold " + mouseCA.size/2 + "px roboto";
       ctx.fillStyle = "white";
       ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size+24, mouseCA.y+mouseCA.size/6);
@@ -294,16 +143,6 @@ function frame() {
   // draw Icons
   ctx.textAlign = "center";
   for (var i=0; i < activeAgents; i++){
-    // ctx.fillStyle = "white";
-    // var tagWidth = helpers.getWidthOfText(agents[i].tag, "normal " + agents[0].size/6 + "px roboto");
-    // ctx.beginPath();
-    // ctx.rect(agents[i].x - tagWidth/2, agents[i].y+agents[i].size, tagWidth, agents[0].size/5);
-    // ctx.fill();
-    // ctx.font = "bold " + 24 + "px roboto";
-    // ctx.fillStyle = "black";
-    // ctx.fillText(agents[i].tag,
-    //   agents[i].x, agents[i].y+agents[i].size+24);
-
     ctx.font = "normal " + 24 + "px roboto";
     ctx.fillStyle = "white";
     ctx.fillText(agents[i].tag,

@@ -19,8 +19,111 @@ var helpers = (function() {
     return helpers.getWidthOfText.ctx.measureText(txt).width;
   };
 
+  _helpers.updateCanvasSize = function(canvas) {
+    var width = window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+
+    var height = window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight;
+
+    var bannerHeight = document.getElementById('header_title').clientHeight;
+    height -= bannerHeight;
+
+    var height_percents = parseInt(document.getElementById("canvas_height_percentage").value);
+
+    var canvasTargetHeight = height * ratio * height_percents / 100;
+
+    // Set Canvas Size
+    canvas.width = document.getElementById("canvas").clientWidth * ratio;
+    canvas.height = canvasTargetHeight;
+    document.getElementById("canvas").style.height = canvas.height/ratio+"px";
+
+    return 0;
+  };
+
+  _helpers.shrinkCanvas = function(evt) {
+    var rect = canvas.getBoundingClientRect();
+    mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
+    mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
+    mouseC = Math.max(canvas.width, canvas.height);
+    for (var i=0; i < activeAgents; i++){
+      var mD = agents[i].distanceTo(mouseX, mouseY);
+      if (mD < mouseC & mouseY < canvas.height) {
+        mouseC = mD;
+        mouseCA = agents[i];
+      }
+    }
+    if (mouseC < mouseCA.size) {
+      if (mouseCA.tag == "null") {
+        ;
+      }
+      else {
+        for (var i=0; i < activeAgents; i++){
+          agents[i].forcedDirection = "up";
+        }
+        switch (mouseCA.tag) {
+          case "HOME":
+            directTo='index.html';
+            break;
+
+          case "SKILLS":
+            directTo='Skills_New.html';
+            break;
+
+          case "CV":
+            directTo='CV.html';
+            break;
+
+          case "PUBLICATIONS":
+            directTo='CV.html';
+            break;
+
+          case "CONTACT ME":
+            directTo='contacts.html';
+            break;
+
+          case "GITHUB":
+            directTo='https://github.com/ArdooTala';
+            break;
+
+          case "LINKEDIN":
+            directTo='https://www.linkedin.com/in/ardeshir-talaei-058343178/';
+            break;
+
+          case "FACEBOOK":
+            directTo='https://www.facebook.com/ardoo.tala';
+            break;
+
+          case "INSTAGRAM":
+            directTo='https://www.instagram.com/ardeshir.talaei/?hl=en';
+            break;
+
+          case "MACHINES":
+            directTo='Machines.html';
+            break;
+
+          case "PROJECTS":
+            directTo='Machines.html';
+            break;
+
+          default:
+            break;
+        }
+      }
+    }
+  }
+
+  _helpers.getMousePos = function(evt) {
+    var rect = canvas.getBoundingClientRect();
+    mouseX = (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width;
+    mouseY = (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height;
+  }
+
   return _helpers;
 })();
+
 
 class LinkNode {
   constructor(x, y, tag, size) {
@@ -91,14 +194,19 @@ class LinkNode {
 
 
       // Min distance to edge.
-      var ex = (Math.min(this.x, canvas.width-this.x) + margin)
-        *(this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2);
-      var ey = (Math.min(this.y, canvas.height-this.y) + margin)
-        *(this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2);
+      var ex = (Math.min(this.x, canvas.width-this.x))
+        *((this.x-canvas.width/2)/Math.abs(this.x-canvas.width/2));
+      var ey = (Math.min(this.y, canvas.height-this.y))
+        *((this.y-canvas.height/2)/Math.abs(this.y-canvas.height/2));
+
       var d = Math.min(Math.abs(ex), Math.abs(ey));
-      if (d < this.size) {
-        nVec = this.unitize(ex, ey);
-        //this.clearance = d;
+
+      if (d < this.size*2) {
+        if (Math.abs(ex) < Math.abs(ey)) {
+          nVec = this.unitize(ex, 0);
+        } else {
+          nVec = this.unitize(0, ey);
+        }
       }
 
       this.heading.vx = 0.95*this.heading.vx + 0.05*nVec.vx;
