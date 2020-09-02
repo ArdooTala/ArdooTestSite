@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Experiences</title>
+    <title>Machines</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
@@ -10,7 +10,6 @@
     <script type="text/javascript" src="js/helpers.js"></script>
   </head>
   <body>
-
     <div class="imgs d-none" style="display: none;">
       <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
       <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
@@ -28,38 +27,51 @@
     <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
     <input class="d-none" style="display: none;" id="agents_count" value="5">
 
-    <div class="container">
+    <div class="container-fluid">
 
       <div class="row">
 
         <div id="header" class="header col-12">
-          <div class="col-xs-11 offset-md-1 align-self-center">
-            <div class="col-xs-12 col-md-auto" style="display: inline-block;">ARDESHIR TALAEI</div>
-            <div class="col-xs-12 col-md-auto" style="display: inline-block; font-size: 10px;">
-              / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</div>
-          </div>
-        </div>
 
-        <canvas id="canvas" class="col-12" width="800"></canvas>
+          <div id="header_title">
+            <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
+          </div>
+
+          <canvas id="canvas" class="col-12" width="800"></canvas>
+
+        </div>
 
       </div>
 
       <div class="row">
 
-        <div class="col-12" style="height: 2em;">
+        <div class="col-12">
 
+          <h5 class="col-12">CONTACT ME</h5>
+          <div class=" contact col-12">
+            <p>EMAIL ME: <b>ARDESHIR.TALAEI@IAAC.NET</b></p>
+          </div>
+          <div class=" contact col-12">
+            <p>TEXT ME ON WHATSAPP: <b>+34 665 046621</b></p>
+          </div>
+          <div class=" contact col-12">
+            <p>CALL ME: <b>+98 915 312 6595</b></p>
+          </div>
+          <!-- <img src="img/machines/banner_vert.jpg" alt="" class="d-none d-lg-block" width="100%" height="auto"> -->
+          <!-- <img src="img/banner_horz.jpg" alt="" class="d-lg-none" width="100%" height="auto"> -->
         </div>
-        <div class=" contact col-12">
-          EMAIL ME AT: ARDESHIR.TALAEI@IAAC.NET
-        </div>
-        <div class=" contact col-12">
-          TEXT ME ON WHATSAPP: +34 665 046621
-        </div>
-        <div class=" contact col-12">
-          <p>CALL ME ON: +98 915 312 6595</p>
-        </div>
+
+
+
       </div>
-      <script src="js/HomeCanvas.js" defer></script>
+
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="js/HomeCanvas.js" defer></script>
+
   </body>
 </html>

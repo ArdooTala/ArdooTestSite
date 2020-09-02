@@ -88,7 +88,7 @@ function frame() {
 
   //Draw lines and circles.
   ctx.fillStyle = "black";
-  // ctx.setLineDash([5, 10]);
+  // ctx.setLineDash([1, 20]);
   for (var i=0; i < activeAgents; i++){
     if (agents[i].neighbor) {
       // Create gradient
@@ -98,8 +98,8 @@ function frame() {
       var rate = agents[i].size / (agents[i].neighbor.size + agents[i].size);
       gradient.addColorStop(rate, "black");
       gradient.addColorStop("1", "white");
-      ctx.strokeStyle = gradient;
-      // ctx.strokeStyle = "white";
+      // ctx.strokeStyle = gradient;
+      ctx.strokeStyle = "white";
       ctx.lineWidth = 5;
 
       ctx.beginPath();
@@ -134,16 +134,13 @@ function frame() {
       ctx.font = "bold " + mouseCA.size/2 + "px roboto";
       ctx.fillStyle = "white";
       ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size+24, mouseCA.y+mouseCA.size/6);
-      ctx.font = "normal " + mouseCA.size/2 + "px roboto";
-      ctx.fillStyle = "white";
-      ctx.fillText(mouseCA.tag, mouseCA.x+mouseCA.size+24, mouseCA.y+mouseCA.size/6);
     }
   }
 
   // draw Icons
   ctx.textAlign = "center";
   for (var i=0; i < activeAgents; i++){
-    ctx.font = "normal " + 24 + "px roboto";
+    ctx.font = "normal " + 150 + "% roboto";
     ctx.fillStyle = "white";
     ctx.fillText(agents[i].tag,
       agents[i].x, agents[i].y+agents[i].size+24);

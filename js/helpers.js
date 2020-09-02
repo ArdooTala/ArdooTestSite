@@ -184,8 +184,8 @@ class LinkNode {
         var nx = this.neighbor.x - this.x;
         var ny = this.neighbor.y - this.y;
         var nVec = this.unitize(nx, ny);
-        nVec.vx *= Math.max(Math.min(helpers.remapRange(nDis, rageDist, restDist, 1, 0.001), 1), 0);
-        nVec.vy *= Math.max(Math.min(helpers.remapRange(nDis, rageDist, restDist, 1, 0.001), 1), 0);
+        nVec.vx *= Math.max(Math.min(helpers.remapRange(nDis, rageDist, restDist, 1, 0.01), 1), 0);
+        nVec.vy *= Math.max(Math.min(helpers.remapRange(nDis, rageDist, restDist, 1, 0.01), 1), 0);
       }
       else{
         this.clearance = 0;
