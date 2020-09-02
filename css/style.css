@@ -21,7 +21,9 @@ canvas{
   outline-width: 0px;
 } */
 
-button{
+.hbutton{
+  padding-top: 30%;
+  text-align: center;
   font-weight: 700;
   font-size: 150%;
   width: 100%;
@@ -29,10 +31,15 @@ button{
   color: white;
   background: transparent;
   border: none;
-  transition-duration: 0.4s;
+  transition: all 0.4s;
 }
 
-button:hover {
+.htitle{
+  width: 100%;
+}
+
+.hbutton:hover {
+  padding-top: 30%;
   width: 100%;
   height: 100%;
   font-weight: 900;
@@ -40,6 +47,48 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
   border: .5em solid black;
+  cursor: default;
+}
+
+.expandable {
+  display: block;
+  float: right;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  margin-right: 5%;
+  cursor: default;
+  width: default;
+  height: default;
+  font-size: 100%;
+  font-weight: 200;
+}
+
+.hbutton .expandable:after {
+  margin: 0 auto;
+  content: 'DETAILS \00bb';
+  opacity: 0;
+  transition: 0.5s;
+  font-weight: 200;
+  font-size: 100%;
+  font-size: 12px;
+}
+
+.hbutton:hover .expandable {
+  border-radius: 10%;
+  background-color: black;
+}
+
+
+.hbutton:hover .expandable:after {
+  opacity: 1;
+  font-weight: 200;
+  font-size: 100%;
+  font-size: 12px;
 }
 
 .centered {
@@ -48,6 +97,7 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 /* button:focus {
   color: white;
   border-radius: 1px;
