@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>[RAS]: Robotic Autonomous Scanning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="../../../js/scripts.js"></script>
+    <script type="text/javascript" src="../../../js/helpers.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12" style="background-color:black; color:white;">
+                <h1>STILL ALIVE . . .</h1>
+                <h6>Wood Upcycling through AI and Robotic Fabrication</h6>
+            </div>
+
+            <div class="col-12">
+                <h6>Part I</h6>
+                <h3><b>R</b>obotic <b>A</b>utonomous <b>S</b>canning</h3>
+
+                <p>In order to close the gap between the physical and the digital world,
+                    all the pieces of scrap wood are scanned and interpreted through an
+                    automated process. For this reason, an aerial picture is taken using
+                    a drone of the scrap pieces. This picture is then analysed using
+                    computer-vision algorithms using OpenCV for python in order to
+                    vectorize the data which enables further use of it in CAD programs
+                    for further interventions.</p>
+            </div>
+
+            <div class="col-12 thinBorder">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Robotic Autonomous Scanning Process</h3>
+                    </div>
+                    <div class="col-12 col-lg-9">
+                        <img src="img/PNG/AutonomousScanning.png" alt="" id="RAS" width="100%" height="auto">
+                    </div>
+
+                    <div class="col-12 col-lg-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>1. <b>Seeking:</b><br>
+                                    The robot seeks the table for scrap pieces. It will
+                                    keep wandering around the table until a piece of
+                                    wood is detected.</p>
+                            </div>
+                            <div class="col-12">
+                                <p>2. <b>Localization:</b><br>
+                                    The robot flies directly over the detected piece of
+                                    wood for scanning</p>
+                            </div>
+                            <div class="col-12">
+                                <p>3. <b>Pick-up:</b><br>
+                                    The robot aproaches the piece while constantly
+                                    cheking for the applied force. As enough force for
+                                    gripping (20N) is applied, the robot stopes and
+                                    turnes on the suction-cups.</p>
+                            </div>
+                            <div class="col-12">
+                                <p>4. <b>Weight Measurment:</b><br>
+                                    Robot lifts the piece and then, using the force
+                                    sensors, the weight of the piece is detected and
+                                    saved into the database</p>
+                            </div>
+                            <div class="col-12">
+                                <p>5. <b>Stacking (storage):</b><br>
+                                    Stacking the scrap pieces in classified batches for
+                                    later use. If the stackes can later be stored as
+                                    batches of similar woods</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 thinBorder" style="background-color:#000000; color:white;">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <h5>End-Effector</h5>
+                        <p>The end-effector used for this purpose consists of these parts:<br> </p>
+                        <ol>
+                            <li><b>Suction-Cups (x3):</b> Used for grabbing the pieces of material for placing and milling</li>
+                            <li><b>RGB Camera:</b> Used for searching and scanning of the material pieces</li>
+                            <li><b>Depth-Camera:</b> For 3D-scanning of the non planar pieces (Not included in this project)</li>
+                        </ol>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <img src="img/Gripper.jpg" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h3>Scanning Workflow</h3>
+            </div>
+            <div class="col-12">
+                <img src="img/ScanningProcess.jpg" alt="" id="RASproc" width="100%" height="auto">
+                <p>The autonomous scanning process diagram.</p>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Extracting Outlines using Computer-Vision</h5>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-3">
+
+                    </div>
+
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <img src="img/CV_Algorithm.svg" alt="" id="RASproc" width="100%" height="auto">
+                        <p>Computer Vision Algorithm for Extracting the Outlines [GITHUB] </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <h5>Autonomous Gripping-Strategy-Design</h5>
+                    </div>
+
+                    <div class="col-12 col-lg-8">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="img/SVG/GrippingGeometric.svg" alt="" id="RASproc" width="100%" height="auto">
+                            </div>
+
+                            <div class="col-12">
+                                <p>This solution is proposed to find the best position and orientation of the gripper to grip a piece of scrap-wood (Target) of an arbitrary shape. <br> Considering each of the three suction cups on the gripper, the 2D polygon of “target” shape represents the sub-vector space, in a coordinate system origined at the center of that suction-cup (CS1, CS2, CS3), that will translate the center of that suction-cup into the polygon. By moving these sub-vector spaces into a shared coordinate-system (CS0), there will be three sub-vector spaces that each moves one of the suction-cups into the polygon. Obviously, the intersection of these three sub-vector spaces (VSC), if there is any, will move all three suction-cups into the polygon. Any vector starting from the origin (CS0) and ending inside VSC will bring the centers into the polygon, yet, the size of the suction-cup is to be considered as the suction-cup will not hold the piece unless the suction-cup is fully covered. The best vector in this sub-vector space will be the vector that will give the most possible margin to the cups. to find this vector, the point inside the VSC that has the maximum distance from the edges (Vt) should be find. This can be interpreted as finding the biggest circle (C) that fits through the VSC. Normally, such a circle should be tangent to at least three of the edges. To find such a circle, the medial-axis of the polygon is extracted and all the intersection points on the medial axises are extracted. <br> These points are the points with maximum dustance from at leat three edges. By checking the distance between each of them and the polygon, the biggest circle can be extracted with rather low computational complexity. <br> In order to find the best orientation, the previous step should be tested in different angles of rotation. To find the best angle, a few evenly distributed angles (5 in this case) over an span of 120 degrees (as the tool is symmetric) are tested first, the best angle is found and the test will be repeated over a smaller span around that angle. This step is repeated for 7 times to find the proper orientation. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <img src="img/SVG/Iterations.svg" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

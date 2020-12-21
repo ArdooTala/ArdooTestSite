@@ -30,8 +30,9 @@ canvas{
   height: 100%;
   color: white;
   background: transparent;
-  border: none;
+  border: trnsparent;
   transition: all 0.4s;
+  border-radius: 10px;
 }
 
 .htitle{
@@ -235,4 +236,13 @@ canvas{
 
  .machine{
    padding: .2em;
+ }
+
+ .itemTab{
+     padding: 1em;
+     background-size:cover;
+     background-color: #00000011;
+     background-clip:padding-box;
+     border:.5em solid transparent;
+     border-radius:2em;
  }

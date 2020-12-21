@@ -63,25 +63,26 @@ var helpers = (function() {
         for (var i=0; i < activeAgents; i++){
           agents[i].forcedDirection = "up";
         }
+        var home_Dir = document.getElementById("homeDir").value;
         switch (mouseCA.tag) {
           case "HOME":
-            directTo='index.html';
+            directTo= home_Dir + 'index.html';
             break;
 
           case "SKILLS":
-            directTo='Skills_New.html';
+            directTo= home_Dir + 'Skills_New.html';
             break;
 
           case "CV":
-            directTo='CV.html';
+            directTo= home_Dir + 'CV.html';
             break;
 
           case "PUBLICATIONS":
-            directTo='CV.html';
+            directTo= home_Dir + 'CV.html';
             break;
 
           case "CONTACT ME":
-            directTo='contacts.html';
+            directTo= home_Dir + 'contacts.html';
             break;
 
           case "GITHUB":
@@ -101,11 +102,11 @@ var helpers = (function() {
             break;
 
           case "MACHINES":
-            directTo='Machines.html';
+            directTo= home_Dir + 'Machines.html';
             break;
 
           case "PROJECTS":
-            directTo='Machines.html';
+            directTo= home_Dir + 'Projects.html';
             break;
 
           default:

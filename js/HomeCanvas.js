@@ -10,12 +10,14 @@ longerEdge = Math.max(canvas.width, canvas.height);
 
 var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
 "MACHINES", "GITHUB", "LINKEDIN", "P2", "INSTAGRAM", "FACEBOOK", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-var sizes = [6, 3, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
+var sizes = [5, 3, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
 var agents = [];
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,
                            -100*sizes[i],
-                           tags[i], (sizes[i]/70)*Math.sqrt(canvas.height*canvas.width));
+                           tags[i],
+                           (sizes[i]/60)*Math.sqrt(canvas.height*canvas.width),
+                       );
 }
 
 var restDist = (sizes[0]/100)*longerEdge*3;
@@ -82,23 +84,14 @@ function frame() {
     else {
       var v = helpers.remapRange(agents[i].clearance,
         rageDist, restDist, longerEdge/200, 0.2);
-      agents[i].updatePos(Math.min(canvas.height, canvas.width)/100);
+      agents[i].updatePos(Math.min(canvas.height, canvas.width)/50);
     }
   }
 
   //Draw lines and circles.
   ctx.fillStyle = "black";
-  // ctx.setLineDash([1, 20]);
   for (var i=0; i < activeAgents; i++){
     if (agents[i].neighbor) {
-      // Create gradient
-      var gradient = ctx.createLinearGradient(agents[i].x, agents[i].y,
-        agents[i].neighbor.x, agents[i].neighbor.y);
-      gradient.addColorStop("0", "white");
-      var rate = agents[i].size / (agents[i].neighbor.size + agents[i].size);
-      gradient.addColorStop(rate, "black");
-      gradient.addColorStop("1", "white");
-      // ctx.strokeStyle = gradient;
       ctx.strokeStyle = "white";
       ctx.lineWidth = 5;
 
@@ -109,7 +102,6 @@ function frame() {
     }
   }
 
-  // ctx.setLineDash([]);
   ctx.strokeStyle = "white";
   ctx.lineWidth = 2;
   for (var i=0; i < activeAgents; i++){
