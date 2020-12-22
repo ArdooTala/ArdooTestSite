@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Still Alive</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="css/style.css">
@@ -12,27 +12,52 @@
 </head>
 
 <body>
-    <div class="../../../imgs d-none" style="display: none;">
-      <img src="../../../img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
-      <img src="../../../img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
-      <img src="../../../img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
-      <img src="../../../img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
-      <img src="../../../img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
-      <img src="../../../img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
-      <img src="../../../img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
-      <img src="../../../img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
-      <img src="../../../img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
-      <img src="../../../img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
-      <img src="../../../img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
-    </div>
-
-    <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
-    <input class="d-none" style="display: none;" id="agents_count" value="5">
-    <input class="d-none" style="display: none;" id="homeDir" value="../../../">
-
     <div class="container">
         <div class="row">
-            <div id="header" class="header col-12">
+
+            <nav class="navbar navbar-dark col-12" style="background-color:black;">
+
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand mr-auto" href="#">
+                    <h1> <b> STILL ALIVE . . . </b> </h1>
+                </a>
+
+                <div class="navbar-text ml-auto" href="#">
+                    Wood Upcycling through AI and Robotic Fabrication
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../Projects.html">Projects</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../Machines.html">Machines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../CV.html">About Me</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../contacts.html">Contact Me</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+
+            <!-- <div id="header" class="header col-12">
 
               <div id="header_title">
                 <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
@@ -40,11 +65,9 @@
 
               <canvas id="canvas" class="col-12" width="800"></canvas>
 
-            </div>
+            </div> -->
 
             <div class="col-12" style="background-color: #000000; color:white;">
-                <h1> <b> STILL ALIVE . . . </b> </h1>
-                <h6>Wood Upcycling through AI and Robotic Fabrication</h6>
 
                 <video class="video-fluid" autoplay loop controls muted style="width:100%">
                     <source src="img/Videos/Vid.mp4" type="video/mp4" />
@@ -92,118 +115,340 @@
                 </ul>
             </div>
 
+
+
             <div class="col-12">
                 <h4>CURRENT WASTE MANAGEMENT SOLUTIONS</h4>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-6 p-3 itemTab" style="background-image:url('img/SolutionsDiagram/Landfill.jpg'); color:white;">
-                <h5>Solution: LANDFILL</h5>
-                <h6>Is it even considered a solution? </h6>
-                <img src="img/SolutionsDiagram/LANDFILL.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
-                <p> <i>Material life-cycle: Landfill as the solution to the waste management</i> </p>
+<!--
+            <div class="accordion" id="accordionFlushExample">
 
-                <ul>
-                    <li> <span><b>Water and land pollution.</b></span> </li>
-                    <li> <span><b>Transportation costs and carbon-footprint.</b></span> </li>
-                    <li> <span> <b>Negative environmental impacts.</b> </span> </li>
-                </ul>
+                <div class="accordion-item thinBorder" style="background-image:url('img/SolutionsDiagram/Landfill.jpg');">
 
-                <div class="collapse waste-solutions-info" id="landfill-info">
-                    <div class="card card-body" style="background:transparent;">
-                        <p>A landfill site is a site for the disposal of waste materials by burial. Landfills provide “out-of-sight-out-of-mind” rationality to the problem of waste management. After it leaves your home, most people ignore what happens to it. Once it is buried in a landfill, we are inclined to forget about it. This is a problem because all landfills have inherent problems related contaminants escaping and affecting our environment.<br>If recyclable materials are put into landfill sites you use more energy and resources trying to create new materials instead of re-using or recycling so landfill sites should not be the first port of call for re-usable or recyclable materials.</p>
+                    <div class="accordion-header" id="flush-headingOne" style="background:transparent;">
+
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background:transparent; color:white;">
+
+                            <div class="row w-100">
+                                <div class="col-12 col-md-6">
+                                    <h5>Landfill</h5>
+
+                                    <ul class="">
+                                        <li>
+                                            <span>Water and land pollution</span>
+                                        </li>
+                                        <li>
+                                            <span>Transportation costs and carbon-footprint</span>
+                                        </li>
+                                        <li>
+                                            <span>Negative environmental impacts</span>
+                                        </li>
+                                    </ul>
+
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <p>A landfill site is a site for the disposal of waste materials by burial. Landfills provide “out-of-sight-out-of-mind” rationality to the problem of waste management. After it leaves your home, most people ignore what happens to it. Once it is buried in a landfill, we are inclined to forget about it. This is a problem because all landfills have inherent problems related contaminants escaping and affecting our environment.<br>If recyclable materials are put into landfill sites you use more energy and resources trying to create new materials instead of re-using or recycling so landfill sites should not be the first port of call for re-usable or recyclable materials.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-6">
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+
+                                        <img src="img/SolutionsDiagram/LANDFILL.png" class="img-fluid" alt="" id="landfill" style="background-color: #FFFFFF66;">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </span>
+
                     </div>
                 </div>
 
-                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#landfill-info" aria-expanded="false" aria-controls="landfill-info">
-                    Expand
-                </button>
-            </div>
+                <div class="accordion-item thinBorder" style="background-image:url('img/SolutionsDiagram/BURNING.jpg');">
 
-            <div class="col-12 col-md-6 col-lg-6 p-3 itemTab" style="background-image:url('img/SolutionsDiagram/BURNING.jpg'); color:white;">
-                <h5>Solution: BURNING</h5>
-                <h6>Escalating the problem</h6>
-                <img src="img/SolutionsDiagram/BURNING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
-                <p> <i>Material life-cycle: Burning as the solution to the waste management</i> </p>
+                    <div class="accordion-header" id="flush-headingTwo" style="background:transparent;">
 
-                <ul>
-                    <li>
-                        <span><b>Air pollution.</b></span>
-                    </li>
-                    <li>
-                        <span><b>Transportation costs and carbon-footprint.</b></span>
-                    </li>
-                    <li>
-                        <span><b>High energy consumption.</b></span>
-                    </li>
-                </ul>
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background:transparent; color:white;">
 
-                <div class="collapse waste-solutions-info" id="burning-info">
-                    <div class="card card-body" style="background:transparent;">
-                        <p>Over the years the process of waste management and recycling has gained increased attention around the world and in the country specifically. Accelerated growth and increase in population, as well as the increase in income per person, increase in industrial development and economic activities, have led to the emergence of new consumption and production habits and negative environmental behaviorism. One of the most harmful behaviors is waste burning.<br> Burning trash in an uncontrolled manner would release all sorts of pollutants into the environment, which would have significant negative impacts on air quality, water quality, health and so on. As well, not everything that is in the waste stream is easily burned.</p>
+                            <div class="row w-100">
+
+                                <div class="col-12 col-md-6">
+
+                                    <h5>Solution: BURNING</h5>
+
+                                    <ul>
+                                        <li>
+                                            <span><b>Air pollution.</b></span>
+                                        </li>
+                                        <li>
+                                            <span><b>Transportation costs and carbon-footprint.</b></span>
+                                        </li>
+                                        <li>
+                                            <span><b>High energy consumption.</b></span>
+                                        </li>
+                                    </ul>
+
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+
+                                        <p>Over the years the process of waste management and recycling has gained increased attention around the world and in the country specifically. Accelerated growth and increase in population, as well as the increase in income per person, increase in industrial development and economic activities, have led to the emergence of new consumption and production habits and negative environmental behaviorism. One of the most harmful behaviors is waste burning.<br> Burning trash in an uncontrolled manner would release all sorts of pollutants into the environment, which would have significant negative impacts on air quality, water quality, health and so on. As well, not everything that is in the waste stream is easily burned.</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-6">
+
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <img src="img/SolutionsDiagram/BURNING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="accordion-item thinBorder" style="background-image:url('img/SolutionsDiagram/RECYCLING.jpg');">
+
+                    <div class="accordion-header" id="flush-headingThree" style="background:transparent;">
+
+                        <span class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background:transparent; color:white;">
+
+                            <div class="row w-100">
+
+                                <div class="col-12 col-md-6">
+
+                                    <h5>Solution: RECYCLING</h5>
+                                    <ul>
+                                        <li>
+                                            <span><b>Requires special industrial facilities.</b></span>
+                                        </li>
+                                        <li>
+                                            <span><b>Transportation costs and carbon-footprint.</b></span>
+                                        </li>
+                                        <li>
+                                            <span><b>High energy consumption.</b></span>
+                                        </li>
+
+                                    </ul>
+
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <p>Recycling is the process of converting waste materials into new materials and objects. It is an alternative to "conventional" waste disposal that can save material and help lower greenhouse gas emissions. Recycling can prevent the waste of potentially useful materials and reduce the consumption of fresh raw materials, thereby reducing: energy usage, air pollution (from incineration), and water pollution (from landfilling). recycling aims at environmental sustainability by substituting raw material inputs into and redirecting waste outputs out of the economic system.</p>
+
+                                        <h6>What is the problem with recycling?</h6>
+                                        <p>Recycling is either a chemical process, mechanical process, thermal process, or a mix of the afore-mentioned. All these processes require special industrial facilities which in turn requires a whole factory. This in turn means transportation of the waste material. In addition, all the above-mentioned protocols are usually highly energy-consumpting which results in higher cost and makes it un-beneficial for most of the materials. </thead> </p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-md-6">
+
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+
+                                        <img src="img/SolutionsDiagram/RECYCLING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div> -->
+
+
+
+
+            <div class="accordion col-12" id="accordionExample">
+
+                <div class="card thinBorder" style="background-image:url('img/SolutionsDiagram/Landfill.jpg'); border-radius:10px;">
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.5)">
+
+                        <div class="card-header" id="flush-headingOne" style="background:transparent;">
+
+                            <span class="accordion-button collapsed w-100" type="button" data-toggle="collapse" data-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="background:transparent; color:white;">
+
+                                <div class="row w-100">
+                                    <div class="col-12 col-md-6">
+                                        <h5>Landfill</h5>
+
+                                        <ul class="">
+                                            <li>
+                                                <span>Water and land pollution</span>
+                                            </li>
+                                            <li>
+                                                <span>Transportation costs and carbon-footprint</span>
+                                            </li>
+                                            <li>
+                                                <span>Negative environmental impacts</span>
+                                            </li>
+                                        </ul>
+
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-parent="#accordionExample">
+                                            <p>A landfill site is a site for the disposal of waste materials by burial. Landfills provide “out-of-sight-out-of-mind” rationality to the problem of waste management. After it leaves your home, most people ignore what happens to it. Once it is buried in a landfill, we are inclined to forget about it. This is a problem because all landfills have inherent problems related contaminants escaping and affecting our environment.<br>If recyclable materials are put into landfill sites you use more energy and resources trying to create new materials instead of re-using or recycling so landfill sites should not be the first port of call for re-usable or recyclable materials.</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-parent="#accordionExample">
+
+                                            <img src="img/SolutionsDiagram/LANDFILL.png" class="img-fluid" alt="" id="landfill" style="background-color: #FFFFFF66;">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </span>
+
+                        </div>
                     </div>
                 </div>
 
-                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#burning-info" aria-expanded="false" aria-controls="burning-info">
-                    Expand
-                </button>
-            </div>
+                <div class="card thinBorder" style="background-image:url('img/SolutionsDiagram/BURNING.jpg'); border-radius:10px;">
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.5)">
 
-            <div class="col-12 col-md-6 p-3 itemTab" style="background-image:url('img/SolutionsDiagram/Recycling.jpg'); color:white;">
-                <h5>Solution: RECYCLING</h5>
-                <h6>The best possible solution yet</h6>
-                <img src="img/SolutionsDiagram/RECYCLING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
-                <p> <i>Material life-cycle: Recycling as the solution to the waste management</i> </p>
+                        <div class="card-header" id="flush-headingTwo" style="background:transparent;">
 
-                <ul>
-                    <li>
-                        <span><b>Requires special industrial facilities.</b></span>
-                    </li>
-                    <li>
-                        <span><b>Transportation costs and carbon-footprint.</b></span>
-                    </li>
-                    <li>
-                        <span><b>High energy consumption.</b></span>
-                    </li>
-                </ul>
+                            <span class="accordion-button collapsed w-100" type="button" data-toggle="collapse" data-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="background:transparent; color:white;">
 
-                <div class="collapse waste-solutions-info" id="recycling-info">
-                    <div class="card card-body" style="background:transparent;">
-                        <p>Recycling is the process of converting waste materials into new materials and objects. It is an alternative to "conventional" waste disposal that can save material and help lower greenhouse gas emissions. Recycling can prevent the waste of potentially useful materials and reduce the consumption of fresh raw materials, thereby reducing: energy usage, air pollution (from incineration), and water pollution (from landfilling). recycling aims at environmental sustainability by substituting raw material inputs into and redirecting waste outputs out of the economic system.</p>
+                                <div class="row w-100">
 
-                        <h6>What is the problem with recycling?</h6>
-                        <p>Recycling is either a chemical process, mechanical process, thermal process, or a mix of the afore-mentioned. All these processes require special industrial facilities which in turn requires a whole factory. This in turn means transportation of the waste material. In addition, all the above-mentioned protocols are usually highly energy-consumpting which results in higher cost and makes it un-beneficial for most of the materials. </thead> </p>
+                                    <div class="col-12 col-md-6">
+
+                                        <h5>INCINERATION (BURNING)</h5>
+
+                                        <ul>
+                                            <li>
+                                                <span><b>Air pollution.</b></span>
+                                            </li>
+                                            <li>
+                                                <span><b>Transportation costs and carbon-footprint.</b></span>
+                                            </li>
+                                            <li>
+                                                <span><b>High energy consumption.</b></span>
+                                            </li>
+                                        </ul>
+
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-parent="#accordionExample">
+
+                                            <p>Over the years the process of waste management and recycling has gained increased attention around the world and in the country specifically. Accelerated growth and increase in population, as well as the increase in income per person, increase in industrial development and economic activities, have led to the emergence of new consumption and production habits and negative environmental behaviorism. One of the most harmful behaviors is waste burning.<br> Burning trash in an uncontrolled manner would release all sorts of pollutants into the environment, which would have significant negative impacts on air quality, water quality, health and so on. As well, not everything that is in the waste stream is easily burned.</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-parent="#accordionExample">
+                                            <img src="img/SolutionsDiagram/BURNING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </span>
+
+                        </div>
                     </div>
+
                 </div>
 
-                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#recycling-info" aria-expanded="false" aria-controls="recycling-info">
-                    Expand
-                </button>
+                <div class="card thinBorder" style="background-image:url('img/SolutionsDiagram/RECYCLING.jpg'); border-radius:10px;">
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.5)">
+
+                        <div class="card-header" id="flush-headingThree" style="background:transparent;">
+
+                            <span class="accordion-button collapsed w-100" type="button" data-toggle="collapse" data-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="background:transparent; color:white;">
+
+                                <div class="row w-100">
+
+                                    <div class="col-12 col-md-6">
+
+                                        <h5>RECYCLING</h5>
+                                        <ul>
+                                            <li>
+                                                <span><b>Requires special industrial facilities.</b></span>
+                                            </li>
+                                            <li>
+                                                <span><b>Transportation costs and carbon-footprint.</b></span>
+                                            </li>
+                                            <li>
+                                                <span><b>High energy consumption.</b></span>
+                                            </li>
+
+                                        </ul>
+
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-parent="#accordionExample">
+                                            <p>Recycling is the process of converting waste materials into new materials and objects. It is an alternative to "conventional" waste disposal that can save material and help lower greenhouse gas emissions. Recycling can prevent the waste of potentially useful materials and reduce the consumption of fresh raw materials, thereby reducing: energy usage, air pollution (from incineration), and water pollution (from landfilling). recycling aims at environmental sustainability by substituting raw material inputs into and redirecting waste outputs out of the economic system.</p>
+
+                                            <h6>What is the problem with recycling?</h6>
+                                            <p>Recycling is either a chemical process, mechanical process, thermal process, or a mix of the afore-mentioned. All these processes require special industrial facilities which in turn requires a whole factory. This in turn means transportation of the waste material. In addition, all the above-mentioned protocols are usually highly energy-consumpting which results in higher cost and makes it un-beneficial for most of the materials. </thead> </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-parent="#accordionExample">
+
+                                            <img src="img/SolutionsDiagram/RECYCLING.png" alt="" id="landfill" width="100%" height="auto" style="background-color: #FFFFFF66;">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
-
-            <div class="col-12 col-md-6 p-3">
+            <div class="col-12 p-3">
                 <h5>WHAT ABOUT THE ENVIRONMENT?</h5>
                 <p>Depending on the type of material, its thickness and weather conditions, the decomposition time of certain types of waste can be extremely long. For example, a glass bottle can take 4000 years to decompose. At landfills, the jumbled mess of waste is compressed which results in the anaerobic decomposition of organic matter, a phenomenon that produces leachate and biogas. Directly flowing into the lakes and rivers, leachate can be severely harmful to wildlife and it can poison animals drinking such polluted water. Even though landfills should meet air-tight requirements to prevent soil and water pollution, leakages into the environment are an unfortunate inevitability. Plastic is versatile, lightweight, flexible, moisture resistant, strong, and relatively inexpensive. Those are the attractive qualities that lead us, around the world, to such a voracious appetite and over-consumption of plastic goods. However, durable and very slow to degrade, plastic materials that are used in the production of so many products all, ultimately, become waste with staying power.</p>
             </div>
 
-            <div class="col-12 p-3 thinBorder" style="background-image:url('img/SolutionsDiagram/Factory_Inside.jpg'); background-size: cover;">
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <h6>Solution:</h6>
-                        <h4>UPCYCLING</h4>
-                        <h6>Solving the problems of recycling </h6>
-                        <p>Upcycling is the opposite of downcycling, which is the other face of the recycling process. Downcycling involves converting materials and products into new materials of lesser quality. Most recycling involves converting or extracting useful materials from a product and creating a different product or material. the goal of upcycling is to prevent wasting potentially useful materials by making use of existing ones. This reduces the consumption of new raw materials when creating new products. Reducing the use of new raw materials can result in a reduction of energy usage, air pollution, water pollution and even greenhouse gas emissions.</p>
-                    </div>
+            <div class="col-12">
+                <div class="col-12 p-0 thinBorder" style="background-image:url('img/SolutionsDiagram/Factory_Inside.jpg');
+                background-position: top;">
+                    <div class="mask p-3" style="background-color: #FFFFFFAA;">
 
-                    <div class="col-12 col-md-8">
-                        <img src="img/SolutionsDiagram/UPCYCLING.png" alt="" id="landfill" width="100%" height="auto">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <h6>Solution:</h6>
+                                <h4>UPCYCLING</h4>
+                                <h6>Solving the problems of recycling </h6>
+                                <p>Upcycling is the opposite of downcycling, which is the other face of the recycling process. Downcycling involves converting materials and products into new materials of lesser quality. Most recycling involves converting or extracting useful materials from a product and creating a different product or material. the goal of upcycling is to prevent wasting potentially useful materials by making use of existing ones. This reduces the consumption of new raw materials when creating new products. Reducing the use of new raw materials can result in a reduction of energy usage, air pollution, water pollution and even greenhouse gas emissions.</p>
+                            </div>
+
+                            <div class="col-12 col-md-8">
+                                <img src="img/SolutionsDiagram/UPCYCLING.png" alt="" id="landfill" width="100%" height="auto">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-lg-3">
                         <h5>CASE STUDY</h5>
                         <h6>WOOD WASTE</h6>
                         <p>The waste resulted from a wood processing is influenced by the diameter of logs being processed, type of saw, specification of product required and skill of workers. Generally, the waste from wood industries such as saw millings and plywood, veneer and others are sawdust, off-cuts, trims, and shavings.</p>
@@ -214,19 +459,29 @@
                             format of the material.</p>
                     </div>
 
-                    <div class="col-12 col-md-6">
-                        <img src="img/ConceptDiagram.jpg" alt="" id="RASproc" width="100%" height="auto">
+                    <div class="col-12 col-lg-9">
+                        <img src="img/SolutionsDiagram/Upcycling_Current.png" alt="" id="RASproc" width="100%" height="auto">
                         <a href="#">Project by ...</a>
                     </div>
+
                 </div>
             </div>
 
-            <div class="col-12 thinBorder" style="border:3px solid black">
-                <h6>Proposal:</h6>
-                <h4>NON-STANDARD SOLUTION FOR NON-STANDARD MATERIALS</h4>
-                <h6>Integrity between the problem and the solution</h6>
-                <img src="img/Cover.png" style="padding-bottom:1em;" alt="" width="100%" height="auto">
-                <p>The current upcycling procedures have proven ineffective due to inefficiency in extracting usable material from the waste material and added time and energy consumption.<br> The proposed solution tackles these problems by removing the extra steps of upcycling the material to the standard form and integrating the non-standard properties of the material into the design.<br> Still Alive is the data based process to produce new solutions from waste material. Using computer vision, autonomous fabrication, robotics, and generative design process our aim to convert existing ‘waste’ materials to a resource based on the upcycling process.<br> Still Alive is the new way solution to transform non-standard material of waste into a new resource. Rather than to use extra energy, cost, and chemical process on natural material, we upcycle the material in energy-intensive processes. Our solution is adding value on the waste material through a process of ‘autonomous’ 3D scanning and robotic fabrication. </p>
+            <div class="col-12">
+                <div class="col-12 p-3 thinBorder" style="border:3px solid black">
+                    <h6>Proposal:</h6>
+                    <h4>NON-STANDARD SOLUTION FOR NON-STANDARD MATERIALS</h4>
+                    <h6>Integrity between the problem and the solution</h6>
+
+                    <img src="img/Cover.png" style="padding-bottom:1em;" alt="" width="100%" height="auto">
+
+                    <p>The current upcycling procedures have proven ineffective due to inefficiency in extracting <strong>standardized</strong> usable material from the waste material and its <b>added time and energy consumption</b>. The proposed solution tackles these problems by removing the extra steps of upcycling the material to the standard form and integrating the non-standard properties of the material into the design.<br> <b>Still Alive</b> is the data-driven process to produce new solutions from waste material. Using computer vision, autonomous fabrication, robotics, and generative design process our aim to convert existing ‘waste’ materials to a resource based on the upcycling process.<br> Still Alive is the new way solution to transform non-standard material of waste into a new resource. Rather than to use extra energy, cost, and chemical process on natural material, we upcycle the material in energy-intensive processes. Our solution is adding value on the waste material through a process of ‘autonomous’ 3D scanning and robotic fabrication. </p>
+
+                    <div class="col-12 col-lg-9 my-3 mx-auto">
+                        <img src="img/SolutionsDiagram/Upcycling_Proposed.png" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
+
+                </div>
             </div>
 
             <div class="col-12">
@@ -244,8 +499,8 @@
                     <h4>Learn more about the different steps of this project:</h4>
                 </div>
 
-                <div class="col-12 col-lg-4 itemTab">
-                    <div class="col-12 machine">
+                <div class="col-12 col-md-4 itemTab">
+                    <div class="col-12 machine" style="position:relative;">
                       <img src="img/PNG/AutonomousScanning.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
                       <img src="img/PNG/AutonomousScanning.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
                       <img src="img/PNG/AutonomousScanning.png" class="d-block d-md-none" alt="" width="100%" height="auto">
@@ -257,8 +512,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-4 itemTab">
-                    <div class="col-12 machine">
+                <div class="col-12 col-md-4 itemTab">
+                    <div class="col-12 machine" style="position:relative;">
                       <img src="img/PNG/DOP.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
                       <img src="img/PNG/DOP.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
                       <img src="img/PNG/DOP.png" class="d-block d-md-none" alt="" width="100%" height="auto">
@@ -270,15 +525,16 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-4 itemTab">
-                    <div class="col-12 machine">
+                <div class="col-12 col-md-4 itemTab">
+                    <div class="col-12 machine" style="position:relative;">
                       <img src="img/PNG/AutonomousFabrication.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
                       <img src="img/PNG/AutonomousFabrication.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
                       <img src="img/PNG/AutonomousFabrication.png" class="d-block d-md-none" alt="" width="100%" height="auto">
 
                       <div class="centered hbutton" name="PE">
-                        <span class="centered htitle"><b>R</b>obotic <br><b>A</b>utonomous <br><b>F</b>abrication <br>
-                          <a class="expandable" type="button" href="RAF.html"></a>
+                        <span class="centered htitle">
+                            <b>R</b>obotic <br><b>A</b>utonomous <br><b>F</b>abrication <br>
+                            <a class="expandable" type="button" href="RAF.html"></a>
                         </span>
                       </div>
                     </div>
@@ -298,10 +554,9 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <script src="../../../js/HomeCanvas.js" defer></script>
+    <!-- <script src="../../../js/HomeCanvas.js" defer></script> -->
 </body>
 </html>

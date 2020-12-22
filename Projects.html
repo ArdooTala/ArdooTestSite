@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Projects</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -8,159 +8,195 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/helpers.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="imgs d-none" style="display: none;">
-      <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
-      <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
-      <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
-      <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
-      <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
-      <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
-      <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
-      <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
-      <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
-      <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
-      <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
+        <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
+        <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
+        <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
+        <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
+        <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
+        <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
+        <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
+        <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
+        <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
+        <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
+        <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
     </div>
 
     <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
     <input class="d-none" style="display: none;" id="agents_count" value="5">
     <input class="d-none" style="display: none;" id="homeDir" value="./">
 
-    <div class="container-fluid">
+    <div class="container">
 
-      <div class="row">
+        <div class="row">
 
-        <div id="header" class="header col-12">
+            <div id="header" class="header col-12">
 
-          <div id="header_title">
-            <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
-          </div>
+            <div id="header_title">
+                <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
+            </div>
 
-          <canvas id="canvas" class="col-12" width="800"></canvas>
+            <canvas id="canvas" class="col-12" width="800"></canvas>
 
         </div>
-
-      </div>
-
-      <div class="row">
-
-        <div class="sidebar col-12 col-md-3 col-lg-2">
-
-          <h5 class="col-sm-12">Projects</h5>
-          <p class="d-none d-md-block">A serie of projects including robotic-process-design,
-              digital fabrication projects and computational design. <br> other credits mentioned in details. click for details <br> Contact me for further information.</p>
-
-          <!-- <img src="img/machines/banner_vert.jpg" alt="" class="d-none d-lg-block" width="100%" height="auto"> -->
-          <!-- <img src="img/banner_horz.jpg" alt="" class="d-lg-none" width="100%" height="auto"> -->
-        </div>
-
-        <div class="machines extruder col-12 col-md-9 col-lg-10">
-
-          <div class="row #no-gutters">
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">STILL <br>ALIVE <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Still_Alive/Still_Alive.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">ALIVE <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">CONSTRUCTION<br>COGNITION <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Construction_Cognition/ConsCog.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">GROWING <br>TENSION <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Construction_Cognition/ConsCog.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">BODY <br>ORNAMENT <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">ROLAND <br>WORKSHOP <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Still_Alive/Still_Alive.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">BCN <br>MAPPING <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
-                </p>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-3 project extruder itemTab">
-              <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
-              <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-block d-md-none" alt="" width="100%" height="auto">
-              <div class="centered hbutton" name="PE">
-                <p class="centered htitle">POLYGON <br>REPRESENTATION <br>
-                  <a class="expandable" type="button" href="Pages/Projects/Polygon_Numerical_Representation/PolyNumRepr.html"></a>
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<div class="row">
+    <div class="col-12 col-lg-3">
 
-    <script src="js/HomeCanvas.js" defer></script>
+        <nav class="navbar navbar-dark" style="background-color:black;">
 
-  </body>
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand mr-auto" href="#">Projects</a>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Machines.html">Machines</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Machines.html">About Me</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Machines.html">Contact Me</a>
+                    </li>
+
+                    <!-- <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Projects <span class="sr-only">(current)</span>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Still Alive</a>
+                <a class="dropdown-item" href="#">Alive</a>
+                <a class="dropdown-item" href="#">Construction Cognition</a>
+            </div>
+        </li> -->
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <div class="machines extruder col-12 col-lg-9">
+
+<div class="row #no-gutters">
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">STILL <br>ALIVE <br>
+                <a class="expandable" type="button" href="Pages/Projects/Still_Alive/Still_Alive.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">ALIVE <br>
+                <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Construction_Cognition/img/Construction_Cognition.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">CONSTRUCTION<br>COGNITION <br>
+                <a class="expandable" type="button" href="Pages/Projects/Construction_Cognition/ConsCog.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Body&Ornament/img/Banner.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Body&Ornament/img/Banner.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Body&Ornament/img/Banner.png" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">BODY <br>& <br>ORNAMENT <br>
+                <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Growing_Tension/img/Growing_Tension.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Growing_Tension/img/Growing_Tension.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Growing_Tension/img/Growing_Tension.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">GROWING <br>TENSION <br>
+                <a class="expandable" type="button" href="Pages/Projects/Construction_Cognition/ConsCog.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Still_Alive/img/RAF.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">ROLAND <br>WORKSHOP <br>
+                <a class="expandable" type="button" href="Pages/Projects/Still_Alive/Still_Alive.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Alive/img/Alive.jpg" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">BCN <br>MAPPING <br>
+                <a class="expandable" type="button" href="Pages/Projects/Alive/Alive.html"></a>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 project extruder itemTab">
+        <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-none d-lg-block" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-none d-md-block d-lg-none" alt="" width="100%" height="auto">
+        <img src="Pages/Projects/Polygon_Numerical_Representation/img/DOP.png" class="d-block d-md-none" alt="" width="100%" height="auto">
+        <div class="centered hbutton" name="PE">
+            <p class="centered htitle">POLYGON <br>REPRESENTATION <br>
+                <a class="expandable" type="button" href="Pages/Projects/Polygon_Numerical_Representation/PolyNumRepr.html"></a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script src="js/HomeCanvas.js" defer></script>
+
+</body>
 </html>

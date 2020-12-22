@@ -226,19 +226,19 @@ canvas{
   overflow: hidden;
 }
 
- .main{
+.main{
    min-width: 100%;
  }
 
- .contact{
+.contact{
    text-align: center;
  }
 
- .machine{
+.machine{
    padding: .2em;
  }
 
- .itemTab{
+.itemTab{
      padding: 1em;
      background-size:cover;
      background-color: #00000011;
