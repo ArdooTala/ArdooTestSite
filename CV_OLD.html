@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Machines</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/helpers.js"></script>
+  </head>
+  <body>
+    <div class="imgs d-none" style="display: none;">
+      <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
+      <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
+      <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
+      <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
+      <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
+      <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
+      <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
+      <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
+      <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
+      <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
+      <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
+    </div>
+
+    <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
+    <input class="d-none" style="display: none;" id="agents_count" value="5">
+    <input class="d-none" style="display: none;" id="homeDir" value="./">
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+        <div id="header" class="header col-12">
+
+          <div id="header_title">
+            <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
+          </div>
+
+          <canvas id="canvas" class="col-12" width="800"></canvas>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="sidebar col-12 col-md-3 col-lg-4">
+          <img src="img/banner_vert.jpg" alt="" class="d-none d-md-block" width="100%" height="auto">
+          <img src="img/banner_horz.jpg" alt="" class="d-md-none" width="100%" height="auto">
+        </div>
+
+        <div class="tline col-md-9 col-lg-8">
+
+          <div class="title publication">
+            <b>Publications</b>
+          </div>
+
+          <ul class="list-unstyled">
+
+            <li class="publication col-sm-12"  onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2019</div>
+              <button class="col-sm-11">
+                <b>Alive: A Multi-Layered, Flexible And Elastic
+                  Shape Aware Graphene-Based Interface</b>
+                  <p class="description">Issued and presented: ACADIA 2019</p>
+              </button>
+            </li>
+
+            <li class="publication col-sm-12" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2014</div>
+              <button class="col-sm-11">
+                <b>The use of Appropriate Colors in the Design of
+                  Children's Room</b>
+                  <p class="description">International Journal of Pediatrics Vol.2(N. 4-1),
+                   September 2014</p>
+              </button>
+            </li>
+
+          </ul>
+
+          <div class="title experience">
+            <b>Educational and Work Experiences</b>
+          </div>
+
+          <ul class="list-unstyled">
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2019</div>
+              <button class="educational col-sm-10">
+                <b>Potticate: Robotic Clay Printing</b>
+                <p class="description">[ARJ school of design] [Director and Instructor] of the workshop around clay printing using a 6-axis robotic arm</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2018-19</div>
+              <button class="educational col-sm-10">
+                <b>[Master_Degree] Master in Robotics and Advanced Construction</b>
+                <p class="description">[IAAC] Institute for Advanced Architecture of Catalunia</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>NOUMENA.io, BCN</b>
+                <p class="description">Development, implementaion and maintanance Computer Vision for
+                  BCN scanning Project</p>
+              </button>
+              <div class="year col-xs-1">2018</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2018</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>IAAC's Global Summer School</b>
+                <p class="description">[IAAC] GSS lead student Assisstant</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2017-18</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>[Master_Degree] Master in Advanced Architecture</b>
+                <p class="description">[IAAC] Institute for Advanced Architecture of Catalunia</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2017</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>Swarm_Morphogenesis</b>
+                <p class="description">Instructors [Ehsan_Baharlou, Mehrad_Mahnia]
+                  Workshop around Agent-Based swarm systems.</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>MEYAR_INT_GROUP</b>
+                <p class="description">Development, implementaion and maintanance of BIM protocol as
+                 [BIM_COORDINATOR] in architectural, structural and mechanical
+                 descipline in "Iran Mall" project</p>
+              </button>
+              <div class="year col-xs-1">2016</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2016</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>CRAFT_2016</b>
+                <p class="description">Instructors [Zubin_Khabazi, Parajen, Tehran_Platform]
+                 experience work col-sm-10 col-md-10shop on parametric fabrication using kuka robot.</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>MOLAVI_CONSRUCTION_Co.</b>
+                <p class="description">Leading a team of 2architectcs, mechanic and electricians in
+                 creating revit model for "Rotana" hotel project
+                 construction-Drawings and schedueles in all three desciplines
+                 Creating and developing a BIM coordination program aligned whith
+                 the project as [BIM_COORDINATOR]</p>
+              </button>
+              <div class="year col-xs-1">2015</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>SAZAB_SHARGH_Co.</b>
+                <p class="description">[BIM_Coordinator] in all three desciplines in pereiliminary &
+                 planning phase of "Kowsar Green Towers"</p>
+              </button>
+              <div class="year col-xs-1">2014</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>ASAR_BANAPARS</b>
+                <p class="description">Contribution in Concept Design as [JUNIOR_DESIGNER] and making
+                 digital models. Leading a team of 3 architects in creating revit
+                 model. Developing and coordinating for preliminary and planning
+                 phase of Architectural & Structural Desciplines of "Padide Kish</p>
+              </button>
+              <div class="year col-xs-1">2013</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2013</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>Earth Architecture</b>
+                <p class="description">Instructor [Pooya_Khazaeli]
+                  Workshop & Conference on using Clay for designing.</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2012</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>Parametric_Dome</b>
+                <p class="description">Instructor [Zubin_Khabazi] Workshop on fabricating a parametric dome.</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <button class="work col-sm-10 col-md-10">
+                <b>M.RAOUF_&_Associates</b>
+                <p class="description">Involving in design development of various projects as a
+                 [JUNIOR_DESIGNER] and making digital models</p>
+              </button>
+              <div class="year col-xs-1">2011</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+
+              <button class="work col-sm-10 col-md-10">
+                <b>ACFORM_office</b>
+                <p class="description">One month of internship, including creation of digital models
+                 and assissting in design </p>
+              </button>
+              <div class="year col-xs-1">2010</div>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2010</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>Algotecture</b>
+                <p class="description">Lecturers [Zubin_Khabazi, Mehran_Haghbin,
+                Mehrad_Mahnia]
+                Conference about algorithmic thinking and design.</p>
+              </button>
+            </li>
+
+            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
+              <div class="year col-xs-1">2009</div>
+              <button class="educational col-sm-10 col-md-10">
+                <b>2nd International Conference on Spatial Structures</b>
+                <p class="description">Conference and experience work col-sm-10 col-md-10shop on designing spatial structures.</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="js/HomeCanvas.js" defer></script>
+
+  </body>
+</html>

@@ -1,254 +1,605 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Machines</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/helpers.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <div class="imgs d-none" style="display: none;">
-      <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
-      <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
-      <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
-      <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
-      <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
-      <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
-      <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
-      <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
-      <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
-      <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
-      <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
+        <img src="img/Icons/1x/DArtboard 1-8.png" alt="" id="HOME">
+        <img src="img/Icons/1x/DArtboard 12-8.png" alt="" id="SKILLS">
+        <img src="img/Icons/1x/DArtboard 3-8.png" alt="" id="CV">
+        <img src="img/Icons/1x/DArtboard 4-8.png" alt="" id="CONTACT ME">
+        <img src="img/Icons/1x/DArtboard 5-8.png" alt="" id="PROJECTS">
+        <img src="img/Icons/1x/DArtboard 6-8.png" alt="" id="FACEBOOK">
+        <img src="img/Icons/1x/DArtboard 7-8.png" alt="" id="PUBLICATIONS">
+        <img src="img/Icons/1x/DArtboard 8-8.png" alt="" id="INSTAGRAM">
+        <img src="img/Icons/1x/DArtboard 9-8.png" alt="" id="GITHUB">
+        <img src="img/Icons/1x/DArtboard 10-8.png" alt="" id="LINKEDIN">
+        <img src="img/Icons/1x/DArtboard 2-8.png" alt="" id="MACHINES">
     </div>
 
     <input class="d-none" style="display: none;" id="canvas_height_percentage" value="10">
     <input class="d-none" style="display: none;" id="agents_count" value="5">
     <input class="d-none" style="display: none;" id="homeDir" value="./">
 
-    <div class="container-fluid">
+    <div class="container">
 
-      <div class="row">
+        <div class="row">
 
-        <div id="header" class="header col-12">
+            <div id="header" class="header col-12">
 
-          <div id="header_title">
-            <p><b>ARDESHIR TALAEI</b> / COMPUTATIONAL-DESIGN/ DIGITAL-FABRICATION/ ROBOTICS</p>
-          </div>
+                <div id="header_title">
+                    <h3>ARDESHIR TALAEI</h3>
+                </div>
 
-          <canvas id="canvas" class="col-12" width="800"></canvas>
+                <canvas id="canvas" class="col-12" width="800"></canvas>
+
+            </div>
 
         </div>
 
-      </div>
+        <div class="row">
 
-      <div class="row">
+            <div class="col-12 col-md-3">
 
-        <div class="sidebar col-12 col-md-3 col-lg-4">
-          <img src="img/banner_vert.jpg" alt="" class="d-none d-md-block" width="100%" height="auto">
-          <img src="img/banner_horz.jpg" alt="" class="d-md-none" width="100%" height="auto">
+                <nav class="navbar navbar-dark" style="background-color:black;">
+
+                    <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand mr-auto" href="#">About Me</a>
+
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="Machines.html">Machines</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="Projects.html">Projects</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="CV.html">About Me</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacts.html">Contact Me</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </nav>
+            </div>
+
+            <div class="tline col-md-9">
+
+                <div class="col-12 p-3">
+                    <h5>WHAT ABOUT ME?</h5>
+                    <p>Ardeshir Talaei born in Mashhad, Iran, is a computational designer, digital fabrication expert, and BIM coordinator, holding master’s degrees in “Advanced Architecture” and “Robotics and Advance Construction” both from IAAC (Institute for advanced architecture of Catalonia).<br> He has worked at multiple architectural firms and construction companies. He has as well worked in digital fabrication and research centers as a computational designer, hardware developer, and fabrication expert. In addition, he has also contributed to the development of multiple projects as a software developer, developing geometric, computer-vision, and AR plugins and libraries. His main fields of research include computational-design, robotics and robotic fabrication, AI, and BIM and their applications in design, fabrication, and construction.<br> He has also taught these topics to many students in different classes including: IAAC’s pre-course for Advance Architecture students, University of Tehran’s master’s degree program students. He is currently an IAAC MaCAD master’s degree program’s faculty teaching “Digital Tools for Integrative Modeling“.</p>
+                </div>
+
+                <!-- <div class="col-12 mt-5">
+                    <h5>Trajectory</h5>
+                </div> -->
+
+                <div class="col-12">
+                    <img src="img/CV/Trajectory.png" class="img-fluid" alt="" id="trajectory">
+                </div>
+
+
+                <div class="row">
+                    <div id="FirstColumn" class="col-12 col-md-6">
+
+                        <div class="col-12 mt-5">
+                            <h5>Publications</h5>
+                        </div>
+
+                        <div id="accordion" style="color:black;">
+                            <div class="card cv">
+                                [2020]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        STILL ALIVE: Upcycling wood waste in construction
+
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                            <div class="card-body cv-info">
+                                                [In-Progress] publication <br> // Proposing a method of upcycling the wooden flat-sheets scrap pieces left from the milling processes for creating shell structures, considering sustainability and cost-efficiency in comparison to current methods of disposal and recycling.
+                                            </div>
+                                            <div class="card-body cv-info">
+                                                Authors:
+                                                <ul>
+                                                    <li>Ardeshir Talaei</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="card cv">
+                                [2019]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        ALIVE: A Multi-layered, Flexible And Elastic Shape-Aware Graphene-Based Interface
+
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body cv-info">
+                                                Published and Presented: [ACADIA 19:Ubiquity and Autonomy] <br>// This research explores the development of a deformation-sensing composite membrane material system following a bottom-up approach and combining various technologies such as Graphene electrical properties and machine-learning toward solving related technical issues.
+                                            </div>
+                                            <div class="card-body cv-info">
+                                                Authors:
+                                                <ul>
+                                                    <li>Daniil Koshelyuk</li>
+                                                    <li>Ardeshir Talaei</li>
+                                                    <li>Soroush Garivani</li>
+                                                    <li>Areti Markopoulou</li>
+                                                    <li>Angelos Chronis</li>
+                                                    <li>David Andres Leon</li>
+                                                    <li>Raimund Krenmuller</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="card cv">
+                                [2014]
+                                <div class="card-header pt-0 row" id="headingThree">
+                                    <button class="btn btn-outline-light btn-sm cv w-100 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                         The use of Appropriate Colors in the Design of Children's Room
+
+                                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                             <div class="card-body cv-info">
+                                                 Published in International Journal of Pediatrics Vol.2(N. 4-1), September 2014
+                                             </div>
+                                             <div class="card-body cv-info">
+                                                 Authors:
+                                                 <ul>
+                                                     <li>Ali Talaei</li>
+                                                     <li>Maryam Ajilian</li>
+                                                     <li>Ardeshir Talaei</li>
+                                                     <li>Ali Rezaei</li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <h5>Education</h5>
+                        </div>
+
+                        <div id="education" style="color:black;">
+                            <div class="card cv">
+                                [2019]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#educationOne" aria-expanded="true" aria-controls="educationOne">
+                                        Master_Degree
+
+                                        <div id="educationOne" class="collapse" aria-labelledby="headingOne" data-parent="#education">
+                                            <div class="card-body cv-info">
+                                                Master in Robotics and Advanced Construction [IAAC] Institute for advanced architecture of Catalunia Barcelona, Spain Course director: Alex Dubor Certificated by [UPC] Universitat Politecnica de Catalunya // Oct. 2018 - July 2019
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2018]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100 collapsed" data-toggle="collapse" data-target="#educationTwo" aria-expanded="false" aria-controls="educationTwo">
+                                        Master_Degree
+
+                                        <div id="educationTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#education">
+                                            <div class="card-body cv-info">
+                                                Master in Advanced Architecture [IAAC] Institute for Advanced Architecture of Catalunia Barcelona, Spain Course director: Areti Markopoulou Certificated by [UPC] Universitat Politecnica de Catalunya // Oct.2017 - July 2018
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2015]
+                                <div class="card-header pt-0 row" id="headingThree">
+                                    <button class="btn btn-outline-light btn-sm cv w-100 collapsed" data-toggle="collapse" data-target="#educationThree" aria-expanded="false" aria-controls="educationThree">
+                                        Bachelor_Degree
+
+                                        <div id="educationThree" class="collapse" aria-labelledby="headingThree" data-parent="#education">
+                                            <div class="card-body cv-info">
+                                                Architecture [FUM] Ferdowsi University of Mashhad Mashhad, Iran Major director: Hamed Kamelnia // Oct.2010 - July 2015
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <h5>Courses & Seminars</h5>
+                        </div>
+
+                        <div id="Workshop" style="color:black;">
+                            <div class="card cv">
+                                [2017]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopOne" aria-expanded="true" aria-controls="WorkshopOne">
+                                        Swarm_Morphogenesis
+
+                                        <div id="WorkshopOne" class="collapse" aria-labelledby="headingOne" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                [CAAI], Tehran, Iran <br> Instructors [Ehsan_Baharlou, Mehrad_Mahnia] <br>[Participant] Workshop on design and fabrication using Agent-Based swarm systems
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2016]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopTwo" aria-expanded="true" aria-controls="WorkshopTwo">
+                                        Processing.org
+
+                                        <div id="WorkshopTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                [Platform28], Tehran, Iran <br> Instructors [Rosa, Amir_Bastan] <br> [Participant] Workshop on creative coding and interactive design using Processing.org
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2016]
+                                <div class="card-header pt-0 row" id="headingThree">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopThree" aria-expanded="true" aria-controls="WorkshopThree">
+                                        CRAFT_2016
+
+                                        <div id="WorkshopThree" class="collapse" aria-labelledby="headingThree" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                [University of Tehran], Tehran, Iran <br> Instructors [Zubin_Khabazi, Paragen, Tehran_Platform] <br> [Participant] Workshop on parametric design, optimization and fabrication of a free-form pavilion using a KUKA robot
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2013]
+                                <div class="card-header pt-0 row" id="headingFour">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopFour" aria-expanded="true" aria-controls="WorkshopFour">
+                                        Earth_Architecture
+                                        <div id="WorkshopFour" class="collapse" aria-labelledby="headingFour" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                [FUM], Mashhad, Iran <br> Instructor [Pooya_Khazaeli] <br> [Organizer]/ [Participant]: Conference and workshop on design and fabrication using Clay and Bamboos
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2012]
+                                <div class="card-header pt-0 row" id="headingFive">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopFive" aria-expanded="true" aria-controls="WorkshopFive">
+                                        Parametric_Dome
+
+                                        <div id="WorkshopFive" class="collapse" aria-labelledby="headingFive" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran <br> Instructor [Zubin_Khabazi] <br> [Participant] Workshop on algorithmic design and fabrication of a parametric dome using laser-cutting
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2012]
+                                <div class="card-header pt-0 row" id="headingSix">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopSix" aria-expanded="true" aria-controls="WorkshopSix">
+                                        Parametric_Architecture
+
+                                        <div id="WorkshopSix" class="collapse" aria-labelledby="headingSix" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran <br> Instructor [Zubin_Khabazi] <br> [Participant] Workshop of Algorithmic Design using Grasshopper
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2010]
+                                <div class="card-header pt-0 row" id="headingSeven">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopSeven" aria-expanded="true" aria-controls="WorkshopSeven">
+                                        Algotecture Conference
+
+                                        <div id="WorkshopSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran <br> Lecturers [Zubin_Khabazi, Mehran_Haghbin, Mehrad_Mahnia] <br> [Participant] Lectures around algorithmic thinking and design
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2009]
+                                <div class="card-header pt-0 row" id="headingEight">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#WorkshopEight" aria-expanded="true" aria-controls="WorkshopEight">
+                                        2nd Int. Conference on Spatial Structures
+
+                                        <div id="WorkshopEight" class="collapse" aria-labelledby="headingEight" data-parent="#Workshop">
+                                            <div class="card-body cv-info">
+                                                [University of Tehran], Tehran, Iran <br> [Participant] Conference on designing spatial structures <br> [Participant] Workshop of designing textile structures <br> [Participant] Workshop of Origami-based design
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="SecondColumn" class="col-12 col-md-6">
+
+                        <div class="col-12 mt-5">
+                            <h5>Teaching Experience</h5>
+                        </div>
+
+                        <div id="Teaching" style="color:black;">
+                            <div class="card cv">
+                                [2021]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingOne" aria-expanded="true" aria-controls="TeachingOne">
+                                        Digital Tools for Integrative Modeling
+
+                                        <div id="TeachingOne" class="collapse" aria-labelledby="headingOne" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                [IAAC], Barcelona, Spain [Faculty]
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2020]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingTwo" aria-expanded="true" aria-controls="TeachingTwo">
+                                        Digital_I Master's Class
+
+                                        <div id="TeachingTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                [University of Tehran], Tehran, Iran [Lecturer]/ [Teaching Assisstant] Teaching the seminar of “digital techniques in design and fabrication” for the students of the master’s degree in the University of Tehran
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2019]
+                                <div class="card-header pt-0 row" id="headingThree">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingThree" aria-expanded="true" aria-controls="TeachingThree">
+                                        Pottricate: Robotic Clay Printing
+
+                                        <div id="TeachingThree" class="collapse" aria-labelledby="headingThree" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                [ARJ school], Tehran, Iran [Director]/ [Instructor] 1-week workshop of design exploration and 3d-printing of clay using a KUKA robot
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2018]
+                                <div class="card-header pt-0 row" id="headingFour">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingFour" aria-expanded="true" aria-controls="TeachingFour">
+                                        IAAC's Computational Design Pre-course
+
+                                        <div id="TeachingFour" class="collapse" aria-labelledby="headingFour" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                [IAAC], Barcelona, Spain [Teaching Assisstant] of the robotic rod-bending system of the 2-week workshop
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2018]
+                                <div class="card-header pt-0 row" id="headingFive">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingFive" aria-expanded="true" aria-controls="TeachingFive">
+                                        IAAC's Global Summer School
+
+                                        <div id="TeachingFive" class="collapse" aria-labelledby="headingFive" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                [IAAC], Barcelona, Spain [Teaching Assisstant]/ [Technical Support] Setup of the robotic rod-bending system for a 2-week workshop as part of the IAAC Global Summer School
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2015]
+                                <div class="card-header pt-0 row" id="headingSix">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#TeachingSix" aria-expanded="true" aria-controls="TeachingSix">
+                                        REVIT & BIM Intermediate Skills
+
+                                        <div id="TeachingSix" class="collapse" aria-labelledby="headingSix" data-parent="#Teaching">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [Tutor] Three introductory to intermediate revit and BIM seminars
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <h5>Research Jobs</h5>
+                        </div>
+
+                        <div id="research-jobs" style="color:black;">
+                            <div class="card cv">
+                                [2019-20]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#researchJobsOne" aria-expanded="true" aria-controls="researchJobsOne">
+                                        FABTORY
+
+                                        <div id="researchJobsOne" class="collapse" aria-labelledby="headingOne" data-parent="#research-jobs">
+                                            <div class="card-body cv-info">
+                                                Tehran, Iran [Head of Hardware and Robotic Development]/ [Computational Designer] Development, implementaion, maintanance and Supervision of the Robotic 6 axis Milling System, Hardware Design and Development, Robot programming and tool-path generation, Design & Rationalization
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2018]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100 collapsed" data-toggle="collapse" data-target="#researchJobsTwo" aria-expanded="false" aria-controls="researchJobsTwo">
+                                        NOUMENA
+
+                                        <div id="researchJobsTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#research-jobs">
+                                            <div class="card-body cv-info">
+                                                Barcelona, Spain [Computer-Vision Developer] Development and implementaion of Computer Vision algorithms and scripts for scanning Barcelona urban space
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <h5>Arch & BIM Jobs</h5>
+                        </div>
+
+                        <div id="BIM-jobs" style="color:black;">
+                            <div class="card cv">
+                                [2016-17]
+                                <div class="card-header pt-0 row" id="headingOne">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsOne" aria-expanded="true" aria-controls="BIMJobsOne">
+                                        MEYAR_INT_GROUP
+
+                                        <div id="BIMJobsOne" class="collapse" aria-labelledby="headingOne" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Tehran, Iran [BIM COORDINATOR] Development, implementaion and maintanance of the BIM protocol in architectural, structural and mechanical desciplines of the "Iran Mall" project
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2015]
+                                <div class="card-header pt-0 row" id="headingTwo">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsTwo" aria-expanded="true" aria-controls="BIMJobsTwo">
+                                        MOLAVI_CONSRUCTION_Co.
+
+                                        <div id="BIMJobsTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [On-Site BIM_COORDINATOR] Leading a team of two architectcs, a mechanical eng. and an electrical eng. in the "Rotana hotel" project for creating and development of a BIM coordination program aligned with the project construction Making of the construction-drawings and schedueles in all three desciplines (Architectural, Structural and MEP)
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2014]
+                                <div class="card-header pt-0 row" id="headingThree">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsThree" aria-expanded="true" aria-controls="BIMJobsThree">
+                                        SAZAB_SHARGH_Co.
+
+                                        <div id="BIMJobsThree" class="collapse" aria-labelledby="headingThree" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [BIM_Coordinator] Coordination and modelling of all three desciplines in “Kowsar Twin Towers“ project
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2013-14]
+                                <div class="card-header pt-0 row" id="headingFour">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsFour" aria-expanded="true" aria-controls="BIMJobsFour">
+                                        ASAR_BANAPARS
+
+                                        <div id="BIMJobsFour" class="collapse" aria-labelledby="headingFour" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [JUNIOR_DESIGNER] [BIM Modelling and coordination] Contribution in Conceptual Design and digital modelling Leading a team of 3 architects in developing and coordination of the BIM model of the preliminary and the planning phase of the Architectural & Structural Desciplines of "Padide Kish" project
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2012]
+                                <div class="card-header pt-0 row" id="headingFive">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsFive" aria-expanded="true" aria-controls="BIMJobsFive">
+                                        M.RAOUF_&_Associates
+
+                                        <div id="BIMJobsFive" class="collapse" aria-labelledby="headingFive" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [JUNIOR_DESIGNER] Involving in design development of various projects and digital modelling
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card cv">
+                                [2011]
+                                <div class="card-header pt-0 row" id="headingSix">
+                                    <button class="btn btn-outline-light btn-sm cv w-100" data-toggle="collapse" data-target="#BIMJobsSix" aria-expanded="true" aria-controls="BIMJobsSix">
+                                        ACFORM_office
+
+                                        <div id="BIMJobsSix" class="collapse" aria-labelledby="headingSix" data-parent="#BIM-jobs">
+                                            <div class="card-body cv-info">
+                                                Mashhad, Iran [Design Intern] Digital modelling and assissting in design
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="tline col-md-9 col-lg-8">
-
-          <div class="title publication">
-            <b>Publications</b>
-          </div>
-
-          <ul class="list-unstyled">
-
-            <li class="publication col-sm-12"  onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2019</div>
-              <button class="col-sm-11">
-                <b>Alive: A Multi-Layered, Flexible And Elastic
-                  Shape Aware Graphene-Based Interface</b>
-                  <p class="description">Issued and presented: ACADIA 2019</p>
-              </button>
-            </li>
-
-            <li class="publication col-sm-12" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2014</div>
-              <button class="col-sm-11">
-                <b>The use of Appropriate Colors in the Design of
-                  Children's Room</b>
-                  <p class="description">International Journal of Pediatrics Vol.2(N. 4-1),
-                   September 2014</p>
-              </button>
-            </li>
-
-          </ul>
-
-          <div class="title experience">
-            <b>Educational and Work Experiences</b>
-          </div>
-
-          <ul class="list-unstyled">
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2019</div>
-              <button class="educational col-sm-10">
-                <b>Potticate: Robotic Clay Printing</b>
-                <p class="description">[ARJ school of design] [Director and Instructor] of the workshop around clay printing using a 6-axis robotic arm</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2018-19</div>
-              <button class="educational col-sm-10">
-                <b>[Master_Degree] Master in Robotics and Advanced Construction</b>
-                <p class="description">[IAAC] Institute for Advanced Architecture of Catalunia</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>NOUMENA.io, BCN</b>
-                <p class="description">Development, implementaion and maintanance Computer Vision for
-                  BCN scanning Project</p>
-              </button>
-              <div class="year col-xs-1">2018</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2018</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>IAAC's Global Summer School</b>
-                <p class="description">[IAAC] GSS lead student Assisstant</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2017-18</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>[Master_Degree] Master in Advanced Architecture</b>
-                <p class="description">[IAAC] Institute for Advanced Architecture of Catalunia</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2017</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>Swarm_Morphogenesis</b>
-                <p class="description">Instructors [Ehsan_Baharlou, Mehrad_Mahnia]
-                  Workshop around Agent-Based swarm systems.</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>MEYAR_INT_GROUP</b>
-                <p class="description">Development, implementaion and maintanance of BIM protocol as
-                 [BIM_COORDINATOR] in architectural, structural and mechanical
-                 descipline in "Iran Mall" project</p>
-              </button>
-              <div class="year col-xs-1">2016</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2016</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>CRAFT_2016</b>
-                <p class="description">Instructors [Zubin_Khabazi, Parajen, Tehran_Platform]
-                 experience work col-sm-10 col-md-10shop on parametric fabrication using kuka robot.</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>MOLAVI_CONSRUCTION_Co.</b>
-                <p class="description">Leading a team of 2architectcs, mechanic and electricians in
-                 creating revit model for "Rotana" hotel project
-                 construction-Drawings and schedueles in all three desciplines
-                 Creating and developing a BIM coordination program aligned whith
-                 the project as [BIM_COORDINATOR]</p>
-              </button>
-              <div class="year col-xs-1">2015</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>SAZAB_SHARGH_Co.</b>
-                <p class="description">[BIM_Coordinator] in all three desciplines in pereiliminary &
-                 planning phase of "Kowsar Green Towers"</p>
-              </button>
-              <div class="year col-xs-1">2014</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>ASAR_BANAPARS</b>
-                <p class="description">Contribution in Concept Design as [JUNIOR_DESIGNER] and making
-                 digital models. Leading a team of 3 architects in creating revit
-                 model. Developing and coordinating for preliminary and planning
-                 phase of Architectural & Structural Desciplines of "Padide Kish</p>
-              </button>
-              <div class="year col-xs-1">2013</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2013</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>Earth Architecture</b>
-                <p class="description">Instructor [Pooya_Khazaeli]
-                  Workshop & Conference on using Clay for designing.</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2012</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>Parametric_Dome</b>
-                <p class="description">Instructor [Zubin_Khabazi] Workshop on fabricating a parametric dome.</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <button class="work col-sm-10 col-md-10">
-                <b>M.RAOUF_&_Associates</b>
-                <p class="description">Involving in design development of various projects as a
-                 [JUNIOR_DESIGNER] and making digital models</p>
-              </button>
-              <div class="year col-xs-1">2011</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7 offset-md-5" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-
-              <button class="work col-sm-10 col-md-10">
-                <b>ACFORM_office</b>
-                <p class="description">One month of internship, including creation of digital models
-                 and assissting in design </p>
-              </button>
-              <div class="year col-xs-1">2010</div>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2010</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>Algotecture</b>
-                <p class="description">Lecturers [Zubin_Khabazi, Mehran_Haghbin,
-                Mehrad_Mahnia]
-                Conference about algorithmic thinking and design.</p>
-              </button>
-            </li>
-
-            <li class="experience col-sm-12 col-md-7" onclick="changeState(this);" onmouseoutt="dchangeState(this);">
-              <div class="year col-xs-1">2009</div>
-              <button class="educational col-sm-10 col-md-10">
-                <b>2nd International Conference on Spatial Structures</b>
-                <p class="description">Conference and experience work col-sm-10 col-md-10shop on designing spatial structures.</p>
-              </button>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -257,5 +608,5 @@
 
     <script src="js/HomeCanvas.js" defer></script>
 
-  </body>
+</body>
 </html>

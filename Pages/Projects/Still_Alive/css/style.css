@@ -14,14 +14,3 @@ p{
     overflow: hidden;
     color: black;
 }
-
-.thinBorder{
-    border:1px solid black;
-    border-radius:10px;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    background-clip:padding-box;
-    background-position: bottom;
-    background-size: cover;
-    background-attachment: fixed;
-}
