@@ -69,8 +69,8 @@ var helpers = (function() {
             directTo= home_Dir + 'index.html';
             break;
 
-          case "SKILLS":
-            directTo= home_Dir + 'Skills_New.html';
+          case "RESEARCHGATE":
+            directTo= 'https://www.researchgate.net/profile/Ardeshir_Talaei2';
             break;
 
           case "CV":

@@ -12,17 +12,8 @@ canvas{
   /* padding-bottom: 1%; */
 }
 
-/* button{
-  color: white;
-  background: transparent;
-  border: none;
-  margin: 2% auto;
-  border: 1px solid white;
-  outline-width: 0px;
-} */
-
 .hbutton{
-  padding-top: 30%;
+  /* padding-top: 30%; */
   text-align: center;
   font-weight: 700;
   font-size: 150%;
@@ -35,6 +26,10 @@ canvas{
   border-radius: 10px;
 }
 
+.otherPrj.hbutton{
+    font-size: 100%;
+}
+
 .htitle{
   width: 100%;
 }
@@ -44,11 +39,15 @@ canvas{
   width: 100%;
   height: 100%;
   font-weight: 900;
-  font-size: 200%;
+  font-size: 175%;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
   border: .5em solid black;
   cursor: default;
+}
+
+.otherPrj.hbutton:hover {
+    font-size: 120%;
 }
 
 .expandable {

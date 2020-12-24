@@ -1,0 +1,10 @@
+body{
+  font-size: 12px;
+  color: white;
+  background: black;
+}
+
+p{
+    padding-bottom: 1em;
+    text-align: justify;
+}

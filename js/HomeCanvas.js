@@ -8,9 +8,8 @@ var activeAgents = parseInt(document.getElementById("agents_count").value);
 helpers.updateCanvasSize(canvas);
 longerEdge = Math.max(canvas.width, canvas.height);
 
-var tags = ["HOME", "SKILLS", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS",
-"MACHINES", "GITHUB", "LINKEDIN", "P2", "INSTAGRAM", "FACEBOOK", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-var sizes = [5, 3, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
+var tags = ["HOME", "RESEARCHGATE", "CV", "CONTACT ME", "PROJECTS", "PUBLICATIONS", "MACHINES", "GITHUB", "LINKEDIN", "P2", "INSTAGRAM", "FACEBOOK", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
+var sizes = [5, 2, 4, 3, 4, 4, 4, 2, 2, 1, 1, 1, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2, .2]
 var agents = [];
 for (var i=0; i < activeAgents; i++){
   agents[i] = new LinkNode(Math.random()*canvas.width*3/4+canvas.width/8,

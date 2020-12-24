@@ -13,7 +13,49 @@
 <body>
     <div class="container">
         <div class="row">
+            <nav class="navbar navbar-dark col-12" style="background-color:black;">
 
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand mr-auto" href="#">
+                    <h1> <b> STILL ALIVE . . . </b> </h1>
+                </a>
+
+                <div class="navbar-text ml-auto" href="#">
+                    Wood Upcycling through AI and Robotic Fabrication
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../Projects.html">Projects</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../Machines.html">Machines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../CV.html">About Me</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../contacts.html">Contact Me</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+
+            
             <div class="col-12">
                 <h1>STILL ALIVE . . .</h1>
                 <h6>Wood Upcycling through AI and Robotic Fabrication</h6>
@@ -41,7 +83,7 @@
                 </ol>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 mt-5">
                 <h4>Tesselation</h4>
                 <p>In order to be able to optimize the panelized shape using the genetic algorithms, a parametric tesselation is required. In this project, "Tangent-Plane Intersection" (TPI) is used as the tesselation algorithm and the coordinates of the planes on the surface are the parameters to be optimized using the Genetic Algorithms.</p>
 
@@ -49,7 +91,7 @@
                 <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 mt-5">
                 <h4>Fitting Algorithm (Nesting)</h4>
                 <p>In order to fit a given panel inside one of the scrap pieces, a custom algorithm has been designed and implemented. First, the critical parts of the panel are defined. This includes parts such as edges that are connecting the panels to their adjacent ones, screw-holes or joint places, edges which are critical to orient the piece in place, etc. which cannot be cutted out of the piece. This algorithm finds the best possible position of the panel inside a piece such that all the critical parts of the panel fall inside the scrap piece with maximum possible clearance from the edges and the panel stays in one piece after it has been cut.</p>
 
@@ -68,17 +110,44 @@
                 <p>In order to find the best orientation, the previous step should be tested in different angles of rotation. To find the best angle, a few evenly distributed angles (5 in this case) over an span of 120 degrees (as the tool is symmetric) are tested first, the best angle is found and the test will be repeated over a smaller span around that angle. This step is repeated for 7 times to find the proper orientation.</p>
             </div>
 
-            <div class="col-12">
-                <h4>Optimization</h4>
-                <p>In order to be able to optimize the panelized shape using the genetic algorithms, a parametric tesselation is required. In this project, "Tangent-Plane Intersection" (TPI) is used as the tesselation algorithm and the coordinates of the planes on the surface are the parameters to be optimized using the Genetic Algorithms.</p>
+            <div class="col-12 mt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Optimization</h4>
+                        <p>In order to be able to optimize the panelized shape using the genetic algorithms, a parametric tesselation is required. In this project, "Tangent-Plane Intersection" (TPI) is used as the tesselation algorithm and the coordinates of the planes on the surface are the parameters to be optimized using the Genetic Algorithms. The process of optimizing the panelization by the means of maximizing the up-cycling efficiency of the process is considered as an iterative process in this project.</p>
+                    </div>
+                    <div class="col-12 col-md-9 col-lg-8 mx-auto">
+                        <img src="img/Optimization/Optimization_Workflow.png" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
 
-                <h6>Optimization Criteria</h6>
-                <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
+                    <div class="col-12">
+                        <h6>Optimization Criteria</h6>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <p>For this reason, a numerical representation of the efficiency is considered as the criteria. The fact that not every arbitrary panelization of the surface is producable using the scrap woods are considered as a filter which if not passed, the criteria is not considered valid and the panelization will be removed from the process.</p>
+                    </div>
+                    <div class="col-12 col-md-9 col-lg-8 mx-auto">
+                        <img src="img/Optimization/Criteria-02.png" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
+                    <div class="col-12 col-lg-9 ml-auto mt-5">
+                        <img src="img/Optimization/Criteria-01.png" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
 
-                <h6>Multi-Objective Optimization</h6>
-                <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
+                    <div class="col-12 mt-5">
+                        <h6>Multi-Objective Optimization</h6>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8 mx-auto">
+                        <img src="img/Optimization/Optimization_Process.png" alt="" id="RASproc" width="100%" height="auto">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
