@@ -55,7 +55,7 @@
                 </div>
             </nav>
 
-            
+
             <div class="col-12">
                 <h1>STILL ALIVE . . .</h1>
                 <h6>Wood Upcycling through AI and Robotic Fabrication</h6>
@@ -88,26 +88,38 @@
                 <p>In order to be able to optimize the panelized shape using the genetic algorithms, a parametric tesselation is required. In this project, "Tangent-Plane Intersection" (TPI) is used as the tesselation algorithm and the coordinates of the planes on the surface are the parameters to be optimized using the Genetic Algorithms.</p>
 
                 <h6>Tangent-Plane Intersection (TPI)</h6>
-                <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
+                <p>Tangent-Plane Intersection method will be explained here.</p>
             </div>
 
             <div class="col-12 mt-5">
                 <h4>Fitting Algorithm (Nesting)</h4>
                 <p>In order to fit a given panel inside one of the scrap pieces, a custom algorithm has been designed and implemented. First, the critical parts of the panel are defined. This includes parts such as edges that are connecting the panels to their adjacent ones, screw-holes or joint places, edges which are critical to orient the piece in place, etc. which cannot be cutted out of the piece. This algorithm finds the best possible position of the panel inside a piece such that all the critical parts of the panel fall inside the scrap piece with maximum possible clearance from the edges and the panel stays in one piece after it has been cut.</p>
+            </div>
 
-                <img src="img/SVG/GrippingGeometric.svg" alt="" id="RASproc" width="100%" height="auto">
+            <div class="col-12 col-lg-6">
+                <img src="img/Nesting/Fitting.svg" alt="" id="RASproc" width="100%" height="auto">
+            </div>
 
+            <div class="col-12 col-lg-6 mx-auto">
                 <h6>Critical Points</h6>
                 <p>Considering a critical point in the panel, the 2D polygon of “target" shape represents the sub-vector-space, in a coordinate system origined at that critical point (CP), that will translate that point into the polygon.</p>
-
                 <h6>Critical Lines and Areas</h6>
-                <p>Considering the start of the line (or any open curve) or the center of the area as the pivot, just the same as with the points, the 2D polygon of “target” shape represents the sub-vector-space, in a coordinate system origined at that pivot point (PV), that will translate the pivot point into the polygon. However, this does not guarantee that the whole length of the line or the whole critical area falls inside the target shape since critical lines and areas are 1-D and 2-D elements. Therefore, an extra step needs to be carried out to subtract the invalid sub-vectors-space. By subtracting this invalid space from the target shape, we can replace the 1-D or 2-D element with its equivalent 0-D element (located at its pivot point) and its corresponding sub-vector-space that fulfills the required conditions. The ... algorithm between the critical line or area, mirrored around its pivot-point, and the boundary of the target shape is used to find out this invalid sub-space and it is then subtracted from the target polygon. These steps needs to be applied to each critical line (curve) or area.</p>
+                <p>Considering the start of the line (or any open curve) or the center of the area as the pivot, just the same as with the points, the 2D polygon of “target” shape represents the sub-vector-space, in a coordinate system origined at that pivot point (PV), that will translate the pivot point into the polygon. However, this does not guarantee that the whole length of the line or the whole critical area falls inside the target shape since critical lines and areas are 1-D and 2-D elements. Therefore, an extra step needs to be carried out to subtract the invalid sub-vectors-space. By subtracting this invalid space from the target shape, we can replace the 1-D or 2-D element with its equivalent 0-D element (located at its pivot point) and its corresponding sub-vector-space that fulfills the required conditions. The Minkowski-Substraction algorithm between the critical line or area and the boundary of the target shape is used to find out this invalid sub-space and it is then subtracted from the target polygon. These steps needs to be applied to each critical line (curve) or area.</p>
+                <img src="img/Nesting/MinkowskiResult.svg" alt="" id="RASproc" width="100%" height="auto">
+            </div>
 
+            <div class="col-12 mt-5">
                 <h6>The Best Translation</h6>
-                <p>By moving all of the sub-vector-spaces, originated at different points, into a shared coordinate-system (SCS), there will be all the sub-vector-spaces that each moves one of the critical elements into the target shape. Obviously, any member of the the intersection of all these sub-vector-spaces (VSC), if there is any, will move all the critical elements into the polygon. Any vector starting from the origin of this shared coordinate system (SCS) and ending inside VSC will bring all the elements into the polygon, yet, the clearance of them from the edges is to be considered. The best vector in this sub-vector-space will be the vector that will give the most possible margin to the elements. To find this vector, the point inside the VSC that has the maximum distance from the edges (Vt) should be found. This can be interpreted as finding the biggest circle (C) that fits through the VSC. Normally, such a circle should be tangent to at least three of the edges. To find such a circle, the medial-axis of the polygon is extracted and all the intersection points on the medial axises are extracted. <br> These points are the points with maximum distance from at least three edges. By checking the distance between each of them and the polygon, the biggest circle can be extracted with rather low computational complexity. <\p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p>c <\p>
 
                 <h6>Solving for Orientation</h6>
                 <p>In order to find the best orientation, the previous step should be tested in different angles of rotation. To find the best angle, a few evenly distributed angles (5 in this case) over an span of 120 degrees (as the tool is symmetric) are tested first, the best angle is found and the test will be repeated over a smaller span around that angle. This step is repeated for 7 times to find the proper orientation.</p>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <img src="img/Nesting/FittingResult.svg" alt="" id="RASproc" width="100%" height="auto">
             </div>
 
             <div class="col-12 mt-5">
